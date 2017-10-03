@@ -1,7 +1,19 @@
 
 
 <section>
+  <input type="range" min="1" max="{{donut.width / 2}}" [(ngModel)]="donut.thickness"> Thickness: {{donut.thickness}} <br>
+  <input type="range" min="0" max="100" [(ngModel)]="donut.progress"> Progress: {{donut.progress}}% <br>
+  <input type="range" min="10" max="1000" [(ngModel)]="donut.width"> Width: {{donut.width}}<br>
+  <input type="checkbox" id="invertDirection" [(ngModel)]="donut.invertDirection"><label for="invertDirection">Invert direction</label>
+  <input type="checkbox" id="showText" [(ngModel)]="donut.showText"><label for="showText">Show text</label>
+  <hr>
 
-  <evb-donut></evb-donut>
+  <evb-donut
+    [invertDirection]="donut.invertDirection"
+    [progress]="donut.progress"
+    [showText]="donut.showText"
+    [thickness]="donut.thickness"
+    [width]="donut.width">
+  </evb-donut>
 
 </section>

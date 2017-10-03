@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  donut = {
+    thickness: 10,
+    progress: 40,
+    width: 240,
+    invertDirection: false,
+    showText: false
+  };
 }
