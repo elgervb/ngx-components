@@ -1,11 +1,38 @@
-
+:host {
+  display: flex;
+  flex-direction: column;
+}
 :host(.dragover) {
-  background-color: red;
-  cursor: progress;
+  .filepicker__droparea {
+    background-color: darken(#FAFAFA, 10%);
+  }
 }
 
-label {
+.filepicker__droparea {
+  background-color: #FAFAFA;
+  border: 4px dashed #dfdfdf;
+  font-size: 1.6rem;
+  margin: 1rem;
+  padding: 3rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.btn__upload {
+  bottom: -1.3rem;
   cursor: pointer;
+  color: #fff;
+  background-color: #51C87B;
+  font-size: 1.2rem;
+  left: 50%;
+  padding: .5rem 2rem;
+  position: absolute;
+  transition: all .3s ease-in;
+  transform: translateX(-50%);
+
+  &:hover {
+    background-color: darken(#51C87B, 10%);
+  }
 }
 input[type=file].form-control {
   display: none;
@@ -31,7 +58,6 @@ input[type=file].form-control {
   height: 100%;
 }
 .filepicker__thumbs__placeholder {
-  max-width: 7rem;
   max-height: 7rem;
 }
 .filepicker__progress {
@@ -39,7 +65,7 @@ input[type=file].form-control {
   width: 100%;
 
   .filepicker__progress__inner {
-    background-color: #08af2f;
+    background-color: #51C87B;
     height: 100%;
     transition: width .1s ease-out;
     width: 0;

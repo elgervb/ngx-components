@@ -3,16 +3,23 @@ import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Outp
 @Component({
   selector: 'evb-file-picker',
   template: `
-    <input #filePicker type="file" id="filePicker" (change)="onChange()" required [multiple]="multiple" class="form-control" />
     <div class="filepicker__progress">
       <div class="filepicker__progress__inner"[style.width.%]="getProgress()"></div>
     </div>
+
     <div class="filepicker__picker">
-      <label for="filePicker">Pick a file</label>
-      <ul class="filepicker__list">
-        <li class="filepicker__list__item" *ngFor="let file of files">{{file.file.name}}</li>
-      </ul>
+      <input #filePicker type="file" id="filePicker" (change)="onChange()" required [multiple]="multiple" class="form-control" />
+
+      <div class="filepicker__droparea">
+        <p>Drop your files here!</p>
+        <label for="filePicker" class="btn__upload">Add file<span *ngIf="multiple">s</span></label>
+      </div>
+
     </div>
+
+    <ul class="filepicker__list">
+      <li class="filepicker__list__item" *ngFor="let file of files">{{file.file.name}}</li>
+    </ul>
     <div class="filepicker__thumbs">
       <div *ngFor="let file of files" class="filepicker__thumbs__placeholder">
         <img [src]="file.content" alt="{{file.file.name}}" title="{{file.file.name}}" class="filepicker__thumb" />
@@ -51,8 +58,8 @@ export class FilePickerComponent implements OnInit {
   }
 
   @HostListener('drop', ['$event']) ondrop(event: DragEvent) {
-
     this.pickFiles(event.dataTransfer.files);
+    this.dragover = false;
     return false;
   }
 
