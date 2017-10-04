@@ -1,0 +1,47 @@
+
+:host(.dragover) {
+  background-color: red;
+  cursor: progress;
+}
+
+label {
+  cursor: pointer;
+}
+input[type=file].form-control {
+  display: none;
+}
+.filepicker__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+.filepicker__list__item {
+  border: 1px solid #999;
+  margin: .125rem;
+  padding: .125rem;
+}
+.filepicker__thumbs {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  width: 100%;
+}
+.filepicker__thumb {
+  height: 100%;
+}
+.filepicker__thumbs__placeholder {
+  max-width: 7rem;
+  max-height: 7rem;
+}
+.filepicker__progress {
+  height: .25rem;
+  width: 100%;
+
+  .filepicker__progress__inner {
+    background-color: #08af2f;
+    height: 100%;
+    transition: width .1s ease-out;
+    width: 0;
+  }
+}
