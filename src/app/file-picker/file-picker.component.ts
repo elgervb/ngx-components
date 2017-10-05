@@ -3,27 +3,29 @@ import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Outp
 @Component({
   selector: 'evb-file-picker',
   template: `
-    <div class="filepicker__progress">
-      <div class="filepicker__progress__inner"[style.width.%]="getProgress()"></div>
-    </div>
+
 
     <div class="filepicker__picker">
       <input #filePicker type="file" id="filePicker" (change)="onChange()" required [multiple]="multiple" class="form-control" />
 
       <div class="filepicker__droparea">
-        <p>Drop your files here!</p>
+
+      <div class="filepicker__progress">
+        <div class="filepicker__progress__inner"[style.width.%]="getProgress()"></div>
+      </div>
+
+        <p *ngIf="files?.length === 0" class="filepicker__dropmessage">Drop your files here!</p>
+
+        <div *ngIf="files?.length > 0" class="filepicker__thumbs">
+          <div *ngFor="let file of files" class="filepicker__thumbs__placeholder">
+            <img [src]="file.content" alt="{{file.file.name}}" title="{{file.file.name}}" class="filepicker__thumb" />
+            <span class="filepicker__filename"> {{file.file.name}} </span>
+          </div>
+        </div>
+
         <label for="filePicker" class="btn__upload">Add file<span *ngIf="multiple">s</span></label>
       </div>
 
-    </div>
-
-    <ul class="filepicker__list">
-      <li class="filepicker__list__item" *ngFor="let file of files">{{file.file.name}}</li>
-    </ul>
-    <div class="filepicker__thumbs">
-      <div *ngFor="let file of files" class="filepicker__thumbs__placeholder">
-        <img [src]="file.content" alt="{{file.file.name}}" title="{{file.file.name}}" class="filepicker__thumb" />
-      </div>
     </div>
   `,
   styleUrls: ['./file-picker.component.scss'],

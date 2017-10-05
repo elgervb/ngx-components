@@ -11,11 +11,13 @@
 .filepicker__droparea {
   background-color: #FAFAFA;
   border: 4px dashed #dfdfdf;
-  font-size: 1.6rem;
   margin: 1rem;
   padding: 3rem 0;
   position: relative;
   text-align: center;
+}
+.filepicker__dropmessage {
+  font-size: 1.6rem;
 }
 
 .btn__upload {
@@ -37,31 +39,42 @@
 input[type=file].form-control {
   display: none;
 }
-.filepicker__list {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-}
-.filepicker__list__item {
-  border: 1px solid #999;
-  margin: .125rem;
-  padding: .125rem;
-}
 .filepicker__thumbs {
+  align-items: flex-end;
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
+  justify-content: center;
   width: 100%;
 }
 .filepicker__thumb {
   height: 100%;
 }
+.filepicker__filename {
+  display: block;
+  font-size: .8em;
+  max-width: 7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .filepicker__thumbs__placeholder {
-  max-height: 7rem;
+  display: flex;
+  flex-direction: column;
+  margin: .25rem;
+
+  img {
+    height: auto;
+    max-height: 7rem;
+    max-width: 7rem;
+    object-fit: scale-down;
+    width: auto;
+  }
 }
 .filepicker__progress {
+  bottom: -.25rem;
   height: .25rem;
+  position: absolute;
   width: 100%;
 
   .filepicker__progress__inner {
