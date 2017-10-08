@@ -20,6 +20,10 @@ import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Outp
           <div *ngFor="let file of files" class="filepicker__thumbs__placeholder">
             <img [src]="file.content" alt="{{file.file.name}}" title="{{file.file.name}}" class="filepicker__thumb" />
             <span class="filepicker__filename"> {{file.file.name}} </span>
+
+            <div class="filepicker__thumbs__delete" (click)="deleteFile(file)">
+              <div class="filepicker__thumbs__delete__text">&times;</div>
+            </div>
           </div>
         </div>
 
@@ -73,6 +77,14 @@ export class FilePickerComponent implements OnInit {
     const fileElement = this.filePicker.nativeElement as HTMLInputElement;
     if (fileElement.files && fileElement.files.length > 0) {
       this.pickFiles(fileElement.files);
+    }
+  }
+
+  deleteFile(file: UploadedFile): void {
+    const index = this.files.indexOf(file);
+
+    if (index !== -1) {
+      this.files.splice(index, 1);
     }
   }
 
