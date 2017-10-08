@@ -1,0 +1,15 @@
+$progressbar-background: #dfdfdf !default;
+$progressbar-foreground: #51C87B !default;
+$progressbar-height: .25rem !default;
+
+.progressbar {
+  background-color: $progressbar-background;
+  height: $progressbar-height;
+
+  .progressbar__inner {
+    background-color: $progressbar-foreground;
+    height: 100%;
+    transition: width .1s ease-out;
+    width: 0;
+  }
+}
