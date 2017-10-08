@@ -10,9 +10,7 @@ import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Outp
 
       <div class="filepicker__droparea">
 
-      <div class="filepicker__progress">
-        <div class="filepicker__progress__inner"[style.width.%]="getProgress()"></div>
-      </div>
+        <evb-progressbar [progress]="getProgress()"></evb-progressbar>
 
         <p *ngIf="files?.length === 0" class="filepicker__dropmessage">Drop your files here!</p>
 

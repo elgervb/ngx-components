@@ -94,16 +94,9 @@ input[type=file].form-control {
     width: auto;
   }
 }
-.filepicker__progress {
+evb-progressbar {
   bottom: -.25rem;
-  height: .25rem;
+  left: 0;
   position: absolute;
   width: 100%;
-
-  .filepicker__progress__inner {
-    background-color: #51C87B;
-    height: 100%;
-    transition: width .1s ease-out;
-    width: 0;
-  }
 }
