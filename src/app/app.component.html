@@ -7,6 +7,14 @@
 </section>
 
 <section>
+  <h2>Progress bar</h2>
+
+  <evb-progressbar [progress]="progressbar.progress"></evb-progressbar>
+
+  <input type="range" min="0" max="100" [(ngModel)]="progressbar.progress"> Progress: {{progressbar.progress}}%<br>
+</section>
+
+<section>
   <h2>Donut</h2>
 
   <input type="range" min="1" max="{{donut.width / 2}}" [(ngModel)]="donut.thickness"> Thickness: {{donut.thickness}} <br>
