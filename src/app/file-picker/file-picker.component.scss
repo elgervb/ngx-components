@@ -45,6 +45,9 @@ input[type=file].form-control {
   flex-direction: row;
   flex-flow: wrap;
   justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   width: 100%;
 }
 .filepicker__thumb {

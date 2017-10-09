@@ -14,16 +14,16 @@ import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Outp
 
         <p *ngIf="files?.length === 0" class="filepicker__dropmessage">Drop your files here!</p>
 
-        <div *ngIf="files?.length > 0" class="filepicker__thumbs">
-          <div *ngFor="let file of files" class="filepicker__thumbs__placeholder">
+        <ul *ngIf="files?.length > 0" class="filepicker__thumbs">
+          <li *ngFor="let file of files" class="filepicker__thumbs__placeholder">
             <img [src]="file.content" alt="{{file.file.name}}" title="{{file.file.name}}" class="filepicker__thumb" />
             <span class="filepicker__filename"> {{file.file.name}} </span>
 
             <div class="filepicker__thumbs__delete" (click)="deleteFile(file)">
               <div class="filepicker__thumbs__delete__text">&times;</div>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
 
         <label for="filePicker" class="btn__upload">Add file<span *ngIf="multiple">s</span></label>
       </div>
