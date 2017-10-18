@@ -5,11 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { DonutComponent } from './charts/donut/donut.component';
+import { FilePickerComponent } from './file-picker/file-picker.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DonutComponent
+    DonutComponent,
+    FilePickerComponent,
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule,

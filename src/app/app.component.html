@@ -1,6 +1,21 @@
 
+<section>
+  <h2>Filepicker</h2>
+
+  <evb-file-picker [multiple]="true"></evb-file-picker>
+
+</section>
 
 <section>
+  <h2>Progress bar</h2>
+
+  <evb-progressbar [progress]="progressbar.progress"></evb-progressbar>
+
+  <input type="range" min="0" max="100" [(ngModel)]="progressbar.progress"> Progress: {{progressbar.progress}}%<br>
+</section>
+
+<section>
+  <h2>Donut</h2>
   <input type="range" min="1" max="{{donut.diameter / 2}}" [(ngModel)]="donut.thickness"> Thickness: {{donut.thickness}} <br>
   <input type="range" min="0" max="100" [(ngModel)]="donut.progress"> Progress: {{donut.progress}}% <br>
   <input type="range" min="10" max="1000" [(ngModel)]="donut.diameter"> Diameter: {{donut.diameter}}<br>

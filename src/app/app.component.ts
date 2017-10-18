@@ -15,4 +15,8 @@ export class AppComponent {
     invertDirection: false,
     showText: false
   };
+
+  progressbar = {
+    progress: 20
+  };
 }
