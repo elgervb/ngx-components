@@ -10,8 +10,8 @@
   <h2>Progress bar</h2>
 
   <evb-progressbar [progress]="progressbar.progress"></evb-progressbar>
-
   <input type="range" min="0" max="100" [(ngModel)]="progressbar.progress"> Progress: {{progressbar.progress}}%<br>
+  <evb-progressbar [progress]="progressbar.progress" [height]="32" [showText]="true"></evb-progressbar>
 </section>
 
 <section>
