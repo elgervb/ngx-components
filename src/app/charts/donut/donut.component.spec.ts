@@ -27,11 +27,11 @@ describe('DonutComponent', () => {
   });
 
   it('should have viewbox', () => {
-    expect(component.viewbox).toBe(`0 0 ${component.width} ${component.width}`);
+    expect(component.viewbox).toBe(`0 0 ${component.diameter} ${component.diameter}`);
   });
 
   it('should render the viewbox attribute', () => {
-    component.width = 480;
+    component.diameter = 480;
     fixture.detectChanges();
 
     const svgElement = fixture.nativeElement.querySelector('.progress') as SVGElement;

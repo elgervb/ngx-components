@@ -1,9 +1,10 @@
 :host {
   display: inline-flex;
   position: relative;
-  font-size: 32px;
+  font-size: 2em;
 }
-:host(.progress--with-text::after) { // "My name is: " attr(data-name) " :)";
+// the ::after component cannot be placed on the svg, as image cannot have dynamic content
+:host(.progress--with-text::after) {
   content: attr(data-progress)"%";
   display: block;
   font-size: 1em;
