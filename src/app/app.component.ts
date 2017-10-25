@@ -11,7 +11,7 @@ export class AppComponent {
   donut = {
     thickness: 10,
     progress: 40,
-    width: 240,
+    diameter: 240,
     invertDirection: false,
     showText: false
   };

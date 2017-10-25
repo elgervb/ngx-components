@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockComponent } from 'ng2-mock-component';
 
-import { ProgressbarComponent } from '../progressbar/progressbar.component';
 import { FilePickerComponent } from './file-picker.component';
 
 describe('FilePickerComponent', () => {
@@ -9,7 +9,10 @@ describe('FilePickerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FilePickerComponent, ProgressbarComponent]
+      declarations: [
+        FilePickerComponent,
+        MockComponent({ selector: 'evb-progressbar', inputs: ['progress'] })
+      ]
     })
       .compileComponents();
   }));
