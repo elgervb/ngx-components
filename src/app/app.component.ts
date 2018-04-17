@@ -19,4 +19,8 @@ export class AppComponent {
   progressbar = {
     progress: 20
   };
+
+  handleClick(arg: string) {
+    console.log('clicked button', event.target);
+  }
 }

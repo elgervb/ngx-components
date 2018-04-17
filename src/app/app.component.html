@@ -1,5 +1,12 @@
 
 <section>
+  <h2>Buttons</h2>
+
+  <evb-button class="test-btn" (click)="handleClick($event)">click me!</evb-button>
+  <evb-button type="submit" (click)="handleClick($event)">submit button</evb-button>
+</section>
+
+<section>
   <h2>Filepicker</h2>
 
   <evb-file-picker [multiple]="true"></evb-file-picker>
