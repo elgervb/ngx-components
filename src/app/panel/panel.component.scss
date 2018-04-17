@@ -1,0 +1,11 @@
+.evb-panel {
+  display: flex;
+}
+
+.evb-panel--row {
+  flex-direction: row;
+}
+
+.evb-panel--col {
+  flex-direction: column;
+}

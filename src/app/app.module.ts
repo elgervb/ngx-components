@@ -8,6 +8,7 @@ import { DonutComponent } from './charts/donut/donut.component';
 import { FilePickerComponent } from './file-picker/file-picker.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
 import { ButtonComponent } from './button/button.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ButtonComponent } from './button/button.component';
     DonutComponent,
     FilePickerComponent,
     ProgressbarComponent,
-    ButtonComponent
+    ButtonComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
