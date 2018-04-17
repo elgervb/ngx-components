@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockComponent } from 'ng2-mock-component';
 
 import { FilePickerComponent } from './file-picker.component';
-import { MockComponent } from 'ng2-mock-component';
 
 describe('FilePickerComponent', () => {
   let component: FilePickerComponent;

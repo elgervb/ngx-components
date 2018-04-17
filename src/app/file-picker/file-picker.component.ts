@@ -1,10 +1,11 @@
 import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 
+import { UploadedFile } from './file-picker.models';
+
+
 @Component({
   selector: 'evb-file-picker',
   template: `
-
-
     <div class="filepicker__picker">
       <input #filePicker type="file" id="filePicker" (change)="onChange()" required [multiple]="multiple" class="form-control" />
 
@@ -147,11 +148,6 @@ export class FilePickerComponent implements OnInit {
       progress.update(event.loaded);
     }
   }
-}
-
-export interface UploadedFile {
-  file: File;
-  content: string;
 }
 
 /**
