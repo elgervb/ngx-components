@@ -2,23 +2,24 @@
 <section>
   <h2>Buttons</h2>
 
-  <evb-panel>
+  <evb-button class="test-btn" (click)="handleClick($event)">click me<i>!</i></evb-button>
+  <evb-button type="submit" (click)="handleClick($event)">submit button</evb-button>
+</section>
+
+<section>
+  <h2>Panels</h2>
+
+  <evb-panel root="true">
     <div>line 1</div>
     <div>line 2</div>
   </evb-panel>
 
-  <evb-panel dir="row">
-    <div>line 1</div>
-    <div>line 2</div>
-  </evb-panel>
   <evb-panel class="mock" dir="col">
     <div>line 1</div>
     <div>line 2</div>
   </evb-panel>
 
 
-  <evb-button class="test-btn" (click)="handleClick($event)">click me!</evb-button>
-  <evb-button type="submit" (click)="handleClick($event)">submit button</evb-button>
 </section>
 
 <section>
