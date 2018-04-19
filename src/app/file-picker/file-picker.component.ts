@@ -26,7 +26,10 @@ import { UploadedFile } from './file-picker.models';
           </li>
         </ul>
 
-        <label for="filePicker" class="btn__upload">Add file<span *ngIf="multiple">s</span></label>
+        <evb-button class="btn__upload">
+          <label for="filePicker">Add file<span *ngIf="multiple">s</span></label>
+        </evb-button>
+
       </div>
 
     </div>
