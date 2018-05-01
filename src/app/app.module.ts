@@ -9,6 +9,10 @@ import { FilePickerComponent } from './file-picker/file-picker.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
 import { ButtonComponent } from './button/button.component';
 import { PanelComponent } from './panel/panel.component';
+import { WizardComponent } from './wizard/wizard.component';
+import { WizardStepComponent } from './wizard-step/wizard-step.component';
+import { WizardHeaderComponent } from './wizard-header/wizard-header.component';
+import { WizardFooterComponent } from './wizard-footer/wizard-footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { PanelComponent } from './panel/panel.component';
     FilePickerComponent,
     ProgressbarComponent,
     ButtonComponent,
-    PanelComponent
+    PanelComponent,
+    WizardComponent,
+    WizardStepComponent,
+    WizardHeaderComponent,
+    WizardFooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,33 @@
+<section>
+  <evb-wizard>
+    <evb-wizard-header></evb-wizard-header>
+
+    <evb-wizard-step name="step1">
+      <p>evb-wizard-step-1</p>
+    </evb-wizard-step>
+
+    <evb-wizard-step name="step2">
+      <h2>evb-wizard-step-2</h2>
+    </evb-wizard-step>
+
+    <evb-wizard-step name="step3">
+      <p>evb-wizard-step-3</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget magna massa. Vivamus vehicula orci interdum ipsum aliquam, ut elementum lorem porttitor. Nulla eget orci justo. In egestas consectetur odio, quis fermentum ipsum condimentum vitae. Sed at tincidunt est. Vestibulum at enim eu eros vulputate consectetur. Phasellus facilisis massa id euismod mattis.</p>
+    </evb-wizard-step>
+
+    <evb-wizard-step name="step4">
+      <p>evb-wizard-step-4</p>
+      <ul>
+        <li> content list 1</li>
+        <li> content list 2</li>
+        <li> content list 3</li>
+        <li> content list 4</li>
+      </ul>
+    </evb-wizard-step>
+
+    <evb-wizard-footer [btnPreviousText]="'Vorige'" [btnNextText]="'Volgende'" [btnCompleteText]="'Voltooien'"></evb-wizard-footer>
+  </evb-wizard>
+</section>
 
 <section>
   <h2>Buttons</h2>
@@ -15,7 +45,6 @@
     <div>line 1</div>
     <div>line 2</div>
   </evb-panel>
-
 
   <evb-button class="test-btn" (click)="handleClick($event)">click me!</evb-button>
   <evb-button type="submit" (click)="handleClick($event)">submit button</evb-button>
