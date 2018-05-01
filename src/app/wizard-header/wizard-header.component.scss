@@ -5,7 +5,7 @@
   padding: 0;
 }
 .wizard__menu-item {
-  padding: .5rem 1rem;
+
 }
 .wizard__menu-item--selected {
   background-color: #51C87B;
@@ -15,6 +15,7 @@
   cursor: pointer;
   display: block;
   height: 100%;
+  padding: .5rem 1rem;
 }
 .wizard__menu-link--disabled {
   cursor: default;
