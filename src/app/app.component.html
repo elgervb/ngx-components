@@ -1,3 +1,20 @@
+
+<section>
+  <evb-list [items]="listItemsObj" [filterEnabled]="true" class="">
+    <ng-template let-item let-i="index" let-odd="odd" let-even="even" let-first="first" let-last="last">
+      <h4>{{item.name}}</h4>
+      <p>
+        item: {{item | json}}<br>
+        index: {{i}}<br>
+        first: {{first}}<br>
+        last: {{last}}<br>
+        odd: {{odd}}<br>
+        even: {{even}}
+      </p>
+    </ng-template>
+  </evb-list>
+</section>
+
 <section>
   <evb-wizard>
     <evb-wizard-header></evb-wizard-header>

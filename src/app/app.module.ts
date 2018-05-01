@@ -13,12 +13,16 @@ import { WizardComponent } from './wizard/wizard.component';
 import { WizardStepComponent } from './wizard-step/wizard-step.component';
 import { WizardHeaderComponent } from './wizard-header/wizard-header.component';
 import { WizardFooterComponent } from './wizard-footer/wizard-footer.component';
+import { ListComponent } from './list/list.component';
+import { ListFilterComponent } from './list-filter/list-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DonutComponent,
     FilePickerComponent,
+    ListComponent,
+    ListFilterComponent,
     ProgressbarComponent,
     ButtonComponent,
     PanelComponent,

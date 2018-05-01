@@ -6,7 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  listItemsObj = [
+    {
+      name: 'template 1',
+      data: 'asdf'
+    }, {
+      name: 'template 2',
+      data: 'asdf'
+    }, {
+      name: 'template 3',
+      data: 'qwer'
+    }
+    , {
+      name: 'template 4',
+      data: 'qwer'
+    }
+  ];
 
   donut = {
     thickness: 10,
