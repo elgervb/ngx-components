@@ -1,21 +1,25 @@
 
 <section>
+  <h2>List</h2>
   <evb-list [items]="listItemsObj" [filterEnabled]="true" class="">
     <ng-template let-item let-i="index" let-odd="odd" let-even="even" let-first="first" let-last="last">
-      <h4>{{item.name}}</h4>
-      <p>
+
+      <evb-panel dir="col">
+        <h4>{{item.name}}</h4>
         item: {{item | json}}<br>
         index: {{i}}<br>
         first: {{first}}<br>
         last: {{last}}<br>
         odd: {{odd}}<br>
         even: {{even}}
-      </p>
+      </evb-panel>
     </ng-template>
   </evb-list>
 </section>
 
 <section>
+  <h2>Wizard</h2>
+
   <evb-wizard>
     <evb-wizard-header></evb-wizard-header>
 
@@ -47,7 +51,7 @@
 </section>
 
 <section>
-  <h2>Buttons</h2>
+  <h2>Panels</h2>
 
   <evb-panel>
     <div>line 1</div>
@@ -58,10 +62,15 @@
     <div>line 1</div>
     <div>line 2</div>
   </evb-panel>
+
   <evb-panel class="mock" dir="col">
     <div>line 1</div>
     <div>line 2</div>
   </evb-panel>
+</section>
+
+<section>
+  <h2>Buttons</h2>
 
   <evb-button class="test-btn" (click)="handleClick($event)">click me!</evb-button>
   <evb-button type="submit" (click)="handleClick($event)">submit button</evb-button>
