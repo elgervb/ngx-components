@@ -1,22 +1,25 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Attribute, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'evb-button',
   template: `
-    <button class="btn {{class}}"
-      [type]="type || 'button'">
+    <button class="btn {{clazz}}"
+      [type]="type || 'button'"
+      [disabled]="busy">
       <ng-content></ng-content>
     </button>
   `,
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-  @Input() class: string;
-  @Input() type?: string;
+  @Input() busy = false;
 
   @Output() click = new EventEmitter<MouseEvent>();
 
-  constructor() { }
+  constructor(
+    @Attribute('class') public clazz?: string,
+    @Attribute('type') public type?: string
+  ) { }
 
   ngOnInit() { }
 }

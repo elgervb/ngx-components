@@ -1,0 +1,12 @@
+
+<div class="wizard__footer">
+  <button type="button" class="btn btn-secondary wizard__btn-previous"
+    (click)="navigatePrevious()"
+    [disabled]="!hasPrevious()">{{btnPreviousText}}</button>
+  <button type="button" class="btn btn-secondary wizard__btn-next"
+    (click)="navigateNext()"
+    *ngIf="hasNext()">{{btnNextText}}</button>
+  <button type="button" class="btn btn-primary wizard__btn-complete"
+    *ngIf="!hasNext()"
+    (click)="sendComplete()">{{btnCompleteText}}</button>
+</div>

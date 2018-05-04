@@ -1,0 +1,24 @@
+.wizard__menu-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wizard__menu-item {
+
+}
+.wizard__menu-item--selected {
+  background-color: #51C87B;
+  color: white;
+}
+.wizard__menu-link {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  padding: .5rem 1rem;
+}
+.wizard__menu-link--disabled {
+  cursor: default;
+  opacity: .5;
+  pointer-events: none;
+}
