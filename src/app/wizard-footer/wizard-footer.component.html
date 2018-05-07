@@ -2,7 +2,7 @@
 <div class="wizard__footer">
   <button type="button" class="btn btn-secondary wizard__btn-previous"
     (click)="navigatePrevious()"
-    [disabled]="!hasPrevious() && !isValid()">{{btnPreviousText}}</button>
+    [disabled]="!hasPrevious() || !isValid()">{{btnPreviousText}}</button>
 
   <button type="button" class="btn btn-secondary wizard__btn-next"
     (click)="navigateNext()"
