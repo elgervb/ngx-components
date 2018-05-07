@@ -5,14 +5,14 @@ import { Component, OnInit, Attribute, Input, Output, EventEmitter } from '@angu
   template: `
     <button class="btn {{clazz}}"
       [type]="type || 'button'"
-      [disabled]="busy">
+      [disabled]="disabled">
       <ng-content></ng-content>
     </button>
   `,
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-  @Input() busy = false;
+  @Input() disabled = false;
 
   @Output() click = new EventEmitter<MouseEvent>();
 
