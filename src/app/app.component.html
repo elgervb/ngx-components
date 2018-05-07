@@ -1,11 +1,12 @@
 
 <section>
   <h2>List</h2>
+
   <evb-list [items]="listItemsObj" [filterEnabled]="true" class="">
     <ng-template let-item let-i="index" let-odd="odd" let-even="even" let-first="first" let-last="last">
 
-      <evb-panel dir="col">
-        <h4>{{item.name}}</h4>
+      <evb-panel dir="col" root="true">
+        <h5>{{item.name}}</h5>
         item: {{item | json}}<br>
         index: {{i}}<br>
         first: {{first}}<br>
@@ -78,7 +79,7 @@
 
   <evb-button class="test-btn" (click)="handleClick($event)">click me!</evb-button>
   <evb-button type="submit" (click)="handleClick($event)">submit button</evb-button>
-  <evb-button busy="true" (click)="handleClick($event)">disabled</evb-button>
+  <evb-button disabled="true" (click)="handleClick($event)">disabled</evb-button>
 </section>
 
 <section>
