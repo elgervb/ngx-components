@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, ViewEncapsulation, HostBinding, ContentChild } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, QueryList, ContentChildren } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'evb-wizard-step',
-  templateUrl: './wizard-step.component.html',
+  template: '<ng-content></ng-content>',
   styleUrls: ['./wizard-step.component.scss']
 })
 export class WizardStepComponent implements OnInit {
@@ -21,7 +21,7 @@ export class WizardStepComponent implements OnInit {
   visited = false;
   private exitAllowed = true;
 
-  @ContentChild(NgForm) form: NgForm;
+  @ContentChildren(NgForm, { descendants: true }) forms: QueryList<NgForm>;
 
   @HostBinding('class.wizard-step--selected')
   get isSelected() {
@@ -34,6 +34,6 @@ export class WizardStepComponent implements OnInit {
   }
 
   private formValid() {
-    return (this.form) ? this.form.valid : true;
+    return (this.forms && this.forms.length > 0) ? !this.forms.some(form => form.invalid) : true;
   }
 }
