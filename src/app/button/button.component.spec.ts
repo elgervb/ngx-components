@@ -34,7 +34,7 @@ describe('ButtonComponent', () => {
   });
 
   it('should be possible to set css class', () => {
-    component.class = 'btn-mock';
+    component.clazz = 'btn-mock';
     fixture.detectChanges();
 
     const el = fixture.debugElement.nativeElement;
@@ -45,7 +45,7 @@ describe('ButtonComponent', () => {
   });
 
   it('should be possible to set multiple css classes', () => {
-    component.class = 'btn-mock btn-mock-2';
+    component.clazz = 'btn-mock btn-mock-2';
     fixture.detectChanges();
 
     const el = fixture.debugElement.nativeElement;
