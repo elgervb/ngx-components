@@ -22,8 +22,8 @@ export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
 
   @Output() complete = new EventEmitter<void>();
 
-  get currentStep() {
-    return this.steps.find(step => step.selected);
+  get currentStep(): WizardStepComponent {
+    return this.steps && this.steps.find(step => step.selected);
   }
 
   private unsubscribe = new Subject<void>();
@@ -67,7 +67,7 @@ export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
   }
 
   navigateNext() {
-    if (this.currentStep) {
+    if (this.currentStep && this.currentStep.canExit) {
       const next = this.steps.reduce((cur, step, index, all) => {
         if (this.currentStep.name === step.name && all.length - 1 > index) {
           return all[index + 1];
@@ -80,7 +80,7 @@ export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
   }
 
   navigatePrevious() {
-    if (this.currentStep) {
+    if (this.currentStep && this.currentStep.canExit) {
       const next = this.steps.reduce((cur, step, index, all) => {
         if (this.currentStep.name === step.name && index > 0) {
           return all[index - 1];
@@ -93,6 +93,9 @@ export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
   }
 
   navigateTo(step?: WizardStepComponent) {
+    if (this.currentStep && !this.currentStep.canExit) {
+      return;
+    }
     // deselect all
     this.steps.forEach(current => current.selected = false);
 
