@@ -42,6 +42,11 @@ export class WizardFooterComponent implements OnInit {
     }, false);
   }
 
+  isValid() {
+    const currentStep = this.steps.find(step => step.selected);
+    return currentStep ? currentStep.canExit : true;
+  }
+
   navigateNext() {
     this.next.emit();
   }

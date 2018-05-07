@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { WizardComponent } from './wizard/wizard.component';
 
 @Component({
   selector: 'evb-root',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  @ViewChild(WizardComponent) wizard: WizardComponent;
+  proceed = false;
 
   listItemsObj = [
     {
@@ -38,5 +42,9 @@ export class AppComponent {
 
   handleClick(arg: string) {
     console.log('clicked button', event.target);
+  }
+
+  toggleProceed() {
+    this.proceed = !this.proceed;
   }
 }
