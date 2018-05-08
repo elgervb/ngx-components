@@ -15,6 +15,7 @@ import { WizardHeaderComponent } from './wizard-header/wizard-header.component';
 import { WizardFooterComponent } from './wizard-footer/wizard-footer.component';
 import { ListComponent } from './list/list.component';
 import { ListFilterComponent } from './list-filter/list-filter.component';
+import { WizardFooter2Component } from './wizard-footer2/wizard-footer2.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ListFilterComponent } from './list-filter/list-filter.component';
     WizardComponent,
     WizardStepComponent,
     WizardHeaderComponent,
-    WizardFooterComponent
+    WizardFooterComponent,
+    WizardFooter2Component
   ],
   imports: [
     BrowserModule,

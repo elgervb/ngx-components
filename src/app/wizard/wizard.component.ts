@@ -5,9 +5,8 @@ import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 import { ThrowStmt } from '@angular/compiler';
 import { WizardFooterComponent } from '../wizard-footer/wizard-footer.component';
 import { WizardHeaderComponent } from '../wizard-header/wizard-header.component';
-import { Subject } from 'rxjs/Subject';
-
-import 'rxjs/add/operator/takeUntil';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'evb-wizard',
@@ -45,7 +44,7 @@ export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
       this.header.steps = this.steps.toArray();
 
       this.header.selectionChange
-        .takeUntil(this.unsubscribe)
+        .pipe(takeUntil(this.unsubscribe))
         .subscribe(step => this.navigateTo(step));
     }
 
@@ -53,15 +52,15 @@ export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
       this.footer.steps = this.steps.toArray();
 
       this.footer.next
-        .takeUntil(this.unsubscribe)
+        .pipe(takeUntil(this.unsubscribe))
         .subscribe(() => this.navigateNext());
 
       this.footer.previous
-        .takeUntil(this.unsubscribe)
+        .pipe(takeUntil(this.unsubscribe))
         .subscribe(() => this.navigatePrevious());
 
       this.footer.complete
-        .takeUntil(this.unsubscribe)
+        .pipe(takeUntil(this.unsubscribe))
         .subscribe(() => this.complete.emit());
     }
   }

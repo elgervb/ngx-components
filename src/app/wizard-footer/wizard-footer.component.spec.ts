@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WizardFooterComponent } from './wizard-footer.component';
 import { ButtonComponent } from '../button/button.component';
+import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 
 describe('WizardFooterComponent', () => {
   let component: WizardFooterComponent;
@@ -9,7 +10,7 @@ describe('WizardFooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [WizardFooterComponent, ButtonComponent]
+      declarations: [WizardFooterComponent, WizardStepComponent, ButtonComponent]
     })
       .compileComponents();
   }));

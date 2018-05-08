@@ -2,6 +2,23 @@ import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Outp
 
 import { UploadedFile } from './file-picker.models';
 
+/**
+ * Keeps track of the file read progress
+ */
+export class FileProgress {
+
+  private bytesRead = 0;
+
+  constructor(private file: File) { }
+
+  update(read: number) {
+    this.bytesRead = read;
+  }
+
+  get progress() {
+    return Math.round((this.bytesRead / this.file.size) * 100);
+  }
+}
 
 @Component({
   selector: 'evb-file-picker',
@@ -45,7 +62,7 @@ export class FilePickerComponent implements OnInit {
   // TODO paste from clipboard
 
   @Input() multiple = false;
-  @Output() onPick = new EventEmitter<UploadedFile>();
+  @Output() pick = new EventEmitter<UploadedFile>();
 
   @ViewChild('filePicker') filePicker;
   @HostBinding('class.filepicker') cssClass = true;
@@ -142,7 +159,7 @@ export class FilePickerComponent implements OnInit {
 
     this.files.push(pickedFile);
 
-    this.onPick.emit(pickedFile);
+    this.pick.emit(pickedFile);
   }
 
   private handleProgress(file: File, event: ProgressEvent) {
@@ -150,23 +167,5 @@ export class FilePickerComponent implements OnInit {
       const progress = this.fileProgress.get(file);
       progress.update(event.loaded);
     }
-  }
-}
-
-/**
- * Keeps track of the file read progress
- */
-export class FileProgress {
-
-  private bytesRead = 0;
-
-  constructor(private file: File) { }
-
-  update(read: number) {
-    this.bytesRead = read;
-  }
-
-  get progress() {
-    return Math.round((this.bytesRead / this.file.size) * 100);
   }
 }

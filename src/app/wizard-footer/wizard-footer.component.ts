@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { nextTick } from 'q';
 import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 
 @Component({
@@ -7,7 +6,7 @@ import { WizardStepComponent } from '../wizard-step/wizard-step.component';
   templateUrl: './wizard-footer.component.html',
   styleUrls: ['./wizard-footer.component.scss']
 })
-export class WizardFooterComponent implements OnInit {
+export class WizardFooterComponent {
 
   @Input() btnPreviousText = 'Previous';
   @Input() btnNextText = 'Next';
@@ -18,11 +17,6 @@ export class WizardFooterComponent implements OnInit {
   @Output() next = new EventEmitter<void>();
   @Output() previous = new EventEmitter<void>();
   @Output() complete = new EventEmitter<void>();
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   hasNext() {
     return this.steps.reduce((value, step, index, all) => {
