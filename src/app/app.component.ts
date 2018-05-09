@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { WizardComponent } from './wizard/wizard.component';
+import { WizardComponent } from './components/wizard/wizard/wizard.component';
 
 @Component({
   selector: 'evb-root',

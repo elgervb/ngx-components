@@ -2,20 +2,17 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { DonutComponent } from './charts/donut/donut.component';
+import { ButtonModule } from './components/button';
+import { WizardModule } from './components/wizard';
 import { FilePickerComponent } from './file-picker/file-picker.component';
-import { ProgressbarComponent } from './progressbar/progressbar.component';
-import { ButtonComponent } from './button/button.component';
-import { PanelComponent } from './panel/panel.component';
-import { WizardComponent } from './wizard/wizard.component';
-import { WizardStepComponent } from './wizard-step/wizard-step.component';
-import { WizardHeaderComponent } from './wizard-header/wizard-header.component';
-import { WizardFooterComponent } from './wizard-footer/wizard-footer.component';
-import { ListComponent } from './list/list.component';
 import { ListFilterComponent } from './list-filter/list-filter.component';
-import { WizardFooter2Component } from './wizard-footer2/wizard-footer2.component';
+import { ListComponent } from './list/list.component';
+import { PanelComponent } from './panel/panel.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -24,19 +21,16 @@ import { WizardFooter2Component } from './wizard-footer2/wizard-footer2.componen
     FilePickerComponent,
     ListComponent,
     ListFilterComponent,
-    ProgressbarComponent,
-    ButtonComponent,
     PanelComponent,
-    WizardComponent,
-    WizardStepComponent,
-    WizardHeaderComponent,
-    WizardFooterComponent,
-    WizardFooter2Component
+    ProgressbarComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
+    ButtonModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    WizardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
