@@ -17,7 +17,7 @@ export class ProgressbarComponent implements OnChanges {
 
   @Input() progress = 0;
   @Input() showText = false;
-  @Input() height?;
+  @Input() height?: number;
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['progress']) {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ContentChild, TemplateRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ContentChild, TemplateRef } from '@angular/core';
 import { NgForOfContext } from '@angular/common';
 
 import { filter } from '../list-filter/filters';
@@ -28,7 +28,7 @@ export class ListComponent implements OnInit {
 
   @ContentChild(TemplateRef) itemTemplate: TemplateRef<NgForOfContext<any>>;
 
-  private filteredItems: any[];
+  filteredItems: any[];
 
   constructor() { }
 

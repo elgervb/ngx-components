@@ -8,6 +8,9 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"

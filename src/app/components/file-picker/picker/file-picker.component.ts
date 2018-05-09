@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output, ViewChild, ElementRef } from '@angular/core';
 
 import { UploadedFile } from './file-picker.models';
 
@@ -64,7 +64,7 @@ export class FilePickerComponent implements OnInit {
   @Input() multiple = false;
   @Output() pick = new EventEmitter<UploadedFile>();
 
-  @ViewChild('filePicker') filePicker;
+  @ViewChild('filePicker') filePicker: ElementRef<HTMLInputElement>;
   @HostBinding('class.filepicker') cssClass = true;
 
   fileProgress = new Map<File, FileProgress>();
@@ -93,7 +93,7 @@ export class FilePickerComponent implements OnInit {
   ngOnInit() { }
 
   onChange() {
-    const fileElement = this.filePicker.nativeElement as HTMLInputElement;
+    const fileElement = this.filePicker.nativeElement;
     if (fileElement.files && fileElement.files.length > 0) {
       this.pickFiles(fileElement.files);
     }

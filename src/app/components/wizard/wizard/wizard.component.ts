@@ -1,8 +1,7 @@
 import {
-  Component, OnInit, Output, EventEmitter, OnDestroy, AfterContentInit, QueryList, ContentChildren, ViewChild, ContentChild
+  Component, OnInit, Output, EventEmitter, OnDestroy, AfterContentInit, QueryList, ContentChildren, ContentChild
 } from '@angular/core';
 import { WizardStepComponent } from '../wizard-step/wizard-step.component';
-import { ThrowStmt } from '@angular/compiler';
 import { WizardFooterComponent } from '../wizard-footer/wizard-footer.component';
 import { WizardHeaderComponent } from '../wizard-header/wizard-header.component';
 import { Subject } from 'rxjs';

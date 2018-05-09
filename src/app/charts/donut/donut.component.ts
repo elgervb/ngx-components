@@ -38,9 +38,9 @@ export class DonutComponent implements OnInit, OnChanges {
   @Input() showText = false;
 
   @ViewChild('progress') progressValue: ElementRef;
-  @HostBinding('class.progress--with-text') hostShowText;
-  @HostBinding('attr.data-progress') hostProgress;
-  @HostBinding('style.fontSize.px') hostFontSize;
+  @HostBinding('class.progress--with-text') hostShowText: boolean;
+  @HostBinding('attr.data-progress') hostProgress: number;
+  @HostBinding('style.fontSize.px') hostFontSize: number;
 
   private circumference = (this.diameter - this.thickness) * Math.PI;
 
