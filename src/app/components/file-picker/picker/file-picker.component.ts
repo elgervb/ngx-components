@@ -2,6 +2,7 @@ import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Outp
 
 import { UploadedFile } from './file-picker.models';
 
+const PERCENTAGE = 100;
 /**
  * Keeps track of the file read progress
  */
@@ -16,7 +17,7 @@ export class FileProgress {
   }
 
   get progress() {
-    return Math.round((this.bytesRead / this.file.size) * 100);
+    return Math.round((this.bytesRead / this.file.size) * PERCENTAGE);
   }
 }
 
@@ -109,7 +110,7 @@ export class FilePickerComponent implements OnInit {
 
   getProgress() {
     let progress = 0;
-    this.fileProgress.forEach((value) => progress += value.progress);
+    this.fileProgress.forEach(value => progress += value.progress);
     return Math.round(progress / this.fileProgress.size);
   }
 
@@ -133,16 +134,18 @@ export class FilePickerComponent implements OnInit {
   }
 
   private handleError(file: File, event: ErrorEvent) {
+    // tslint:disable-next-line no-any
     const error: DOMException = (event.target as any).error;
     switch (error.code) {
       case error.NOT_FOUND_ERR:
-        throw new Error('File ${file.name} could not be found');
+        throw new Error(`File ${file.name} could not be found`);
+      // tslint:disable-next-line no-any
       case (error as any).NOT_READABLE_ERR:
-        throw new Error('File ${file.name} is not readable');
+        throw new Error(`File ${file.name} is not readable`);
       case error.ABORT_ERR:
         break; // noop
       default:
-        throw new Error('An error occurred reading file ${file.name}.');
+        throw new Error(`An error occurred reading file ${file.name}.`);
     }
   }
 

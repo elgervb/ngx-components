@@ -1,5 +1,9 @@
 import { Component, ElementRef, HostBinding, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
+const MIN_DIAMETER = 16;
+const PADDING = 64;
+const MAX_PERCENTAGE = 100;
+
 @Component({
   selector: 'evb-donut',
   template: `
@@ -48,11 +52,11 @@ export class DonutComponent implements OnInit, OnChanges {
     return `0 0 ${this.diameter} ${this.diameter}`;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.calculateProgress(this.progress);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges) {
     if (changes) {
       this.circumference = (this.diameter - this.thickness) * Math.PI;
       this.calculateProgress(this.progress);
@@ -60,13 +64,13 @@ export class DonutComponent implements OnInit, OnChanges {
 
       if (this.showText) {
         this.hostProgress = this.progress;
-        this.hostFontSize = Math.max(16, (this.diameter - 64 - (2 * this.thickness)) / 2);
+        this.hostFontSize = Math.max(MIN_DIAMETER, (this.diameter - PADDING - (2 * this.thickness)) / 2);
       }
     }
   }
 
-  private calculateProgress(value: number): void {
-    const progress = value / 100;
+  private calculateProgress(value: number) {
+    const progress = value / MAX_PERCENTAGE;
     const dashoffset = this.circumference * (1 - progress);
 
     this.progressValue.nativeElement.style.strokeDashoffset = dashoffset;

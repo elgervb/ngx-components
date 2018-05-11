@@ -14,6 +14,8 @@
  * Learn more in https://angular.io/docs/ts/latest/guide/browser-support.html
  */
 
+// tslint:disable no-import-side-effect
+
 /***************************************************************************************************
  * BROWSER POLYFILLS
  */
@@ -72,7 +74,6 @@ import 'core-js/es7/reflect';
  * Zone JS is required by default for Angular itself.
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
-
 
 
 /***************************************************************************************************

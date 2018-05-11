@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
+const DEBOUNCE_TIME = 200;
+
 @Component({
   selector: 'evb-list-filter',
   template: `
@@ -15,6 +17,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 })
 export class ListFilterComponent implements OnInit {
 
+  // tslint:disable-next-line no-any item can be of any time
   @Input() items: any[];
   @Output() filter = new EventEmitter<string>();
 
@@ -24,7 +27,7 @@ export class ListFilterComponent implements OnInit {
 
   ngOnInit() {
     this.filterSubject
-      .pipe(distinctUntilChanged(), debounceTime<string>(200))
+      .pipe(distinctUntilChanged(), debounceTime<string>(DEBOUNCE_TIME))
       .subscribe(filter => this.filter.emit(filter));
   }
 
