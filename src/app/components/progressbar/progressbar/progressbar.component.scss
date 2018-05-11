@@ -1,5 +1,5 @@
 $progressbar-background: #dfdfdf !default;
-$progressbar-foreground: #51C87B !default;
+$progressbar-foreground: #51c87b !default;
 $progressbar-height: .25rem !default;
 $progressbar-width: 100% !default;
 $progressbar-color: darken($progressbar-foreground, 10%) !default;
@@ -13,7 +13,7 @@ $progressbar-color-gt-50: lighten($progressbar-background, 10%) !default;
   width: $progressbar-width;
 
   &.progress--with-text::after {
-    content: attr(data-progress)"%";
+    content: attr(data-progress) '%';
     display: block;
     font-size: 1em;
     left: 50%;

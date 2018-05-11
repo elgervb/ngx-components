@@ -9,8 +9,7 @@ import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'evb-wizard',
-  templateUrl: './wizard.component.html',
-  styleUrls: ['./wizard.component.scss']
+  templateUrl: './wizard.component.html'
 })
 export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
 

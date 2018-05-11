@@ -2,11 +2,7 @@
   display: flex;
   flex-direction: column;
 }
-:host(.dragover) {
-  .filepicker__droparea {
-    background-color: darken(#fafafa, 10%);
-  }
-}
+
 
 .filepicker__droparea {
   border: 4px dashed #dfdfdf;
@@ -15,6 +11,12 @@
   position: relative;
   text-align: center;
 }
+:host(.dragover) {
+  .filepicker__droparea {
+    background-color: darken(#fafafa, 10%);
+  }
+}
+
 .filepicker__dropmessage {
   font-size: 1.6rem;
 }
@@ -62,7 +64,7 @@ input[type=file].form-control {
 
   .filepicker__thumbs__delete {
     align-items: center;
-    background-color: rgba(#51C87B, .5);
+    background-color: rgba(#51c87b, .5);
     color: #fff;
     display: flex;
     font-size: 2em;
@@ -72,7 +74,7 @@ input[type=file].form-control {
     opacity: 0;
     position: absolute;
     text-align: center;
-    text-shadow: 0 0 5px rgba(0,0,0,1);
+    text-shadow: 0 0 .3125rem rgba(0, 0, 0, 1);
     transition: all .3s ease-in;
     width: 100%;
   }
