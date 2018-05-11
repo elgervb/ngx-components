@@ -1,22 +1,26 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from './button/button.component';
+import { ListComponent } from './list/list.component';
+import { ListFilterComponent } from './list-filter/list-filter.component';
+
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    ButtonComponent
+    ListComponent,
+    ListFilterComponent
   ],
   exports: [
-    ButtonComponent
+    ListComponent,
+    ListFilterComponent
   ]
 })
-export class ButtonModule {
+export class ListModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: ButtonModule,
+      ngModule: ListModule,
       providers: []
     };
   }

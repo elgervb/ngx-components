@@ -22,6 +22,6 @@ export class FilePickerModule {
     return {
       ngModule: FilePickerModule,
       providers: []
-    }
+    };
   }
 }

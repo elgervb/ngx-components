@@ -26,6 +26,6 @@ export class EvbComponentsModule {
     return {
       ngModule: EvbComponentsModule,
       providers: []
-    }
+    };
   }
 }
