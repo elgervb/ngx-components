@@ -21,6 +21,6 @@ export class ListModule {
     return {
       ngModule: ListModule,
       providers: []
-    }
+    };
   }
 }

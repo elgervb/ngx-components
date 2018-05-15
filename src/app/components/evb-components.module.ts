@@ -4,7 +4,7 @@ import { ButtonModule } from './button';
 import { WizardModule } from './wizard';
 import { FilePickerModule } from './file-picker';
 import { ProgressbarModule } from './progressbar';
-import { ListModule } from '../list/list.module';
+import { ListModule } from './list/list.module';
 
 @NgModule({
   imports: [

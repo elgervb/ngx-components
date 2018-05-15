@@ -22,12 +22,14 @@ import { filter } from '../list-filter/filters';
 })
 export class ListComponent implements OnInit {
 
+  // tslint:disable-next-line no-any item can be of any time
   @Input() items: any[];
-
   @Input() filterEnabled = true;
 
+  // tslint:disable-next-line no-any item can be of any time
   @ContentChild(TemplateRef) itemTemplate: TemplateRef<NgForOfContext<any>>;
 
+  // tslint:disable-next-line no-any item can be of any time
   filteredItems: any[];
 
   constructor() { }
