@@ -1,5 +1,8 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
+/**
+ * Bar to show progress...
+ */
 @Component({
   selector: 'evb-progressbar',
   template: `
@@ -15,10 +18,22 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class ProgressbarComponent implements OnChanges {
 
+  /**
+   * Progress in percent
+   */
   @Input() progress = 0;
+  /**
+   * Show the progress as text in the progress bar
+   */
   @Input() showText = false;
+  /**
+   * The height of the bar
+   */
   @Input() height?: number;
 
+  /**
+   * Angular lifecycle
+   */
   ngOnChanges(changes: SimpleChanges) {
     if (changes['progress']) {
       this.progress = +changes['progress'].currentValue;

@@ -1,24 +1,6 @@
-import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output, ViewChild, ElementRef } from '@angular/core';
-
-import { UploadedFile } from './file-picker.models';
-
-/**
- * Keeps track of the file read progress
- */
-export class FileProgress {
-
-  private bytesRead = 0;
-
-  constructor(private file: File) { }
-
-  update(read: number) {
-    this.bytesRead = read;
-  }
-
-  get progress() {
-    return Math.round((this.bytesRead / this.file.size) * 100);
-  }
-}
+import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { UploadedFile } from '../file-picker.models';
+import { FileProgress } from './fileprogress';
 
 @Component({
   selector: 'evb-file-picker',

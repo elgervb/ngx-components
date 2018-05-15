@@ -1,5 +1,8 @@
 import { Component, ElementRef, HostBinding, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
+/**
+ * Donut chart. Basically a circle diagram with a hole in it...
+ */
 @Component({
   selector: 'evb-donut',
   template: `
@@ -37,22 +40,38 @@ export class DonutComponent implements OnInit, OnChanges {
   /** Whether or not to show progress percentage as text. Defaults to false */
   @Input() showText = false;
 
+  /**
+   * The progress element
+   */
   @ViewChild('progress') progressValue: ElementRef;
+  /**
+   * Whether or not to show the progress text in the middle of the donut
+   */
   @HostBinding('class.progress--with-text') hostShowText: boolean;
+  /**
+   * Bind the progress to a data attribute on the host
+   */
   @HostBinding('attr.data-progress') hostProgress: number;
+  /**
+   * When showing text, use this font size
+   */
   @HostBinding('style.fontSize.px') hostFontSize: number;
 
+  /** the circumference fo the donut */
   private circumference = (this.diameter - this.thickness) * Math.PI;
 
+  /**
+   * Get the SVG viewbox value for the recalculated donut
+   */
   get viewbox() {
     return `0 0 ${this.diameter} ${this.diameter}`;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.calculateProgress(this.progress);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges) {
     if (changes) {
       this.circumference = (this.diameter - this.thickness) * Math.PI;
       this.calculateProgress(this.progress);
@@ -65,7 +84,12 @@ export class DonutComponent implements OnInit, OnChanges {
     }
   }
 
-  private calculateProgress(value: number): void {
+  /**
+   * Calculate the progress and set styling properties accordingly
+   *
+   * @param value the progress value
+   */
+  private calculateProgress(value: number) {
     const progress = value / 100;
     const dashoffset = this.circumference * (1 - progress);
 
