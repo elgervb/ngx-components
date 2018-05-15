@@ -1,5 +1,9 @@
 import { Component, ElementRef, HostBinding, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
+const MIN_DIAMETER = 16;
+const PADDING = 64;
+const MAX_PERCENTAGE = 100;
+
 /**
  * Donut chart. Basically a circle diagram with a hole in it...
  */
@@ -79,18 +83,18 @@ export class DonutComponent implements OnInit, OnChanges {
 
       if (this.showText) {
         this.hostProgress = this.progress;
-        this.hostFontSize = Math.max(16, (this.diameter - 64 - (2 * this.thickness)) / 2);
+        this.hostFontSize = Math.max(MIN_DIAMETER, (this.diameter - PADDING - (2 * this.thickness)) / 2);
       }
     }
   }
 
   /**
-   * Calculate the progress and set styling properties accordingly
-   *
-   * @param value the progress value
-   */
+    * Calculate the progress and set styling properties accordingly
+    *
+    * @param value the progress value
+    */
   private calculateProgress(value: number) {
-    const progress = value / 100;
+    const progress = value / MAX_PERCENTAGE;
     const dashoffset = this.circumference * (1 - progress);
 
     this.progressValue.nativeElement.style.strokeDashoffset = dashoffset;

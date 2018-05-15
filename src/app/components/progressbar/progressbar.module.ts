@@ -18,6 +18,6 @@ export class ProgressbarModule {
     return {
       ngModule: ProgressbarModule,
       providers: []
-    }
+    };
   }
 }

@@ -5,7 +5,7 @@
 }
 // the ::after component cannot be placed on the svg, as image cannot have dynamic content
 :host(.progress--with-text::after) {
-  content: attr(data-progress)"%";
+  content: attr(data-progress) '%';
   display: block;
   font-size: 1em;
   left: 50%;
@@ -21,15 +21,15 @@
 }
 
 .progress__meter, .progress__value {
-	fill: none;
+  fill: none;
 }
 
 .progress__meter {
-	stroke: #e6e6e6;
+  stroke: #e6e6e6;
 }
 
 .progress__value {
-	stroke: #f77a52;
+  stroke: #f77a52;
 
   &.arc-left {
     transform: scaleY(-1);

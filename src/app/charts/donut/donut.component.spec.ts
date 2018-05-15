@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { DonutComponent } from './donut.component';
 
+const DIAMETER = 480;
+const PROGRESS = 20;
+
 describe('DonutComponent', () => {
   let component: DonutComponent;
   let fixture: ComponentFixture<DonutComponent>;
@@ -31,29 +34,29 @@ describe('DonutComponent', () => {
   });
 
   it('should render the viewbox attribute', () => {
-    component.diameter = 480;
+    component.diameter = DIAMETER;
     fixture.detectChanges();
 
     const svgElement = fixture.nativeElement.querySelector('.progress') as SVGElement;
     expect(svgElement).not.toBeNull();
 
     const attrViewbox = svgElement.getAttribute('viewBox');
-    expect(attrViewbox).toBe('0 0 480 480');
+    expect(attrViewbox).toBe(`0 0 ${DIAMETER} ${DIAMETER}`);
   });
 
   it('should update progress on host when showtext is true', () => {
 
     component.showText = true;
-    component.progress = 20;
-    component.ngOnChanges({ progress: new SimpleChange(0, 20, true) });
+    component.progress = PROGRESS;
+    component.ngOnChanges({ progress: new SimpleChange(0, PROGRESS, true) });
 
     expect(component.hostProgress).toEqual(component.progress);
   });
 
   it('should not update progress on host when showtext is false', () => {
     component.showText = false;
-    component.progress = 20;
-    component.ngOnChanges({ progress: new SimpleChange(0, 20, true) });
+    component.progress = PROGRESS;
+    component.ngOnChanges({ progress: new SimpleChange(0, PROGRESS, true) });
 
     expect(component.hostProgress).toBeUndefined();
   });

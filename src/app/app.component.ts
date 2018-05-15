@@ -3,8 +3,7 @@ import { WizardComponent } from './components/wizard/wizard/wizard.component';
 
 @Component({
   selector: 'evb-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
 
