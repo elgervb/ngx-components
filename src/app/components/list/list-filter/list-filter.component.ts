@@ -7,11 +7,9 @@ const DELAY_MS = 200;
 @Component({
   selector: 'evb-list-filter',
   template: `
-    <div class="list__filter">
-      <input type="text" class="form-control from-control--filter"
-        [placeholder]="placeholder"
-        (input)="onFilter($event.currentTarget.value)">
-    </div>
+    <input type="text" class="form-control from-control--filter"
+      [placeholder]="placeholder"
+      (input)="onFilter($event.currentTarget.value)">
   `,
   styleUrls: ['./list-filter.component.scss']
 })

@@ -12,17 +12,17 @@ export class AppComponent {
 
   listItemsObj = [
     {
-      name: 'template 1',
+      name: 'item 1',
       data: 'asdf'
     }, {
-      name: 'template 2',
+      name: 'item 2',
       data: 'asdf'
     }, {
-      name: 'template 3',
+      name: 'item 3',
       data: 'qwer'
     }
     , {
-      name: 'template 4',
+      name: 'item 4',
       data: 'qwer'
     }
   ];
