@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'evb-wizard-step',
-  template: '<ng-content></ng-content>',
+  template: '<ng-content *ngIf="visited"></ng-content>',
   styleUrls: ['./wizard-step.component.scss']
 })
 export class WizardStepComponent implements OnInit {
