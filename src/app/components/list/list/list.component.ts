@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'evb-list',
@@ -6,9 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
-  // tslint:disable-next-line no-any item can be of any time
-  @Input() items: any[];
 
   constructor() { }
 

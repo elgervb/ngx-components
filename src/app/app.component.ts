@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { filter } from './components/list';
 import { WizardComponent } from './components/wizard/wizard/wizard.component';
 
 @Component({
@@ -41,6 +42,11 @@ export class AppComponent {
 
   handleClick(arg: string) {
     console.log('clicked button', event.target);
+  }
+
+  filteredItems: any = this.listItemsObj;
+  onFilter(filterStr: string) {
+    this.filteredItems = this.listItemsObj.filter(item => filter(item, filterStr));
   }
 
   toggleProceed() {
