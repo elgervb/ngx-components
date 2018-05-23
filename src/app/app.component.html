@@ -2,10 +2,10 @@
 <section>
   <h2>List</h2>
 
-  <evb-list-filter [items]="items" (filter)="onFilter($event)"></evb-list-filter>
+  <evb-list-filter [items]="listItemsObj" (filter)="onFilter($event)"></evb-list-filter>
 
-  <evb-list [items]="listItemsObj">
-    <evb-list-item *ngFor="let item of listItemsObj">
+  <evb-list>
+    <evb-list-item *ngFor="let item of filteredItems">
       <h5>{{item.name}}</h5>
       <p>item: {{item | json}}</p>
     </evb-list-item>
