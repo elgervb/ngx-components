@@ -1,8 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { WizardFooterComponent } from './wizard-footer.component';
-import { ButtonComponent } from '../button/button.component';
-import { WizardStepComponent } from '../wizard-step/wizard-step.component';
+import { ButtonModule } from '../../button';
 
 describe('WizardFooterComponent', () => {
   let component: WizardFooterComponent;
@@ -10,18 +8,21 @@ describe('WizardFooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [WizardFooterComponent, ButtonComponent]
+      declarations: [WizardFooterComponent],
+      imports: [ButtonModule.forRoot()]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
+    debugger;
     fixture = TestBed.createComponent(WizardFooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    debugger;
+    expect(component).toBeTruthy();
+  });
 });
