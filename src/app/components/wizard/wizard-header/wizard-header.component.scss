@@ -19,3 +19,16 @@
   opacity: .5;
   pointer-events: none;
 }
+.align--center {
+  justify-content: center;
+}
+.align--right {
+  justify-content: flex-end;
+}
+.align--fill {
+  justify-content: space-between;
+
+  .wizard__menu-item {
+    flex: 1 1 auto;
+  }
+}
