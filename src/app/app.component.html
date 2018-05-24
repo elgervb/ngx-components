@@ -2,19 +2,13 @@
 <section>
   <h2>List</h2>
 
-  <evb-list [items]="listItemsObj" [filterEnabled]="true" class="">
-    <ng-template let-item let-i="index" let-odd="odd" let-even="even" let-first="first" let-last="last">
+  <evb-list-filter [items]="listItemsObj" (filter)="onFilter($event)"></evb-list-filter>
 
-      <evb-panel dir="col" root="true">
-        <h5>{{item.name}}</h5>
-        item: {{item | json}}<br>
-        index: {{i}}<br>
-        first: {{first}}<br>
-        last: {{last}}<br>
-        odd: {{odd}}<br>
-        even: {{even}}
-      </evb-panel>
-    </ng-template>
+  <evb-list>
+    <evb-list-item *ngFor="let item of filteredItems">
+      <h5>{{item.name}}</h5>
+      <p>item: {{item | json}}</p>
+    </evb-list-item>
   </evb-list>
 </section>
 

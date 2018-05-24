@@ -1,7 +1,8 @@
+
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { ButtonComponent } from '../button/button.component';
-import { ProgressbarComponent } from '../progressbar/progressbar.component';
 import { FilePickerComponent } from './file-picker.component';
+import { ProgressbarModule } from '../../progressbar';
+import { ButtonModule } from '../../button';
 
 describe('FilePickerComponent', () => {
   let component: FilePickerComponent;
@@ -10,10 +11,9 @@ describe('FilePickerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        ButtonComponent,
         FilePickerComponent,
-        ProgressbarComponent,
-      ]
+      ],
+      imports: [ProgressbarModule.forRoot(), ButtonModule.forRoot()]
     })
       .compileComponents();
   }));
