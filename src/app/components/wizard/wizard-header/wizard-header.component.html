@@ -1,5 +1,5 @@
 <nav class="wizard__menu">
-  <ul class="wizard__menu-list">
+  <ul class="wizard__menu-list {{alignmentCss}}">
     <li class="wizard__menu-item" *ngFor="let step of steps" [class.wizard__menu-item--selected]="isSelected(step.name)">
       <a class="wizard__menu-link" (click)="setSelected(step)" [class.wizard__menu-link--disabled]="!step.visited">
           {{step.name}}

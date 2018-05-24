@@ -34,6 +34,10 @@ export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
     this.unsubscribe.complete();
   }
 
+  getStep(name: string) {
+    return this.steps.find(step => step.name === name);
+  }
+
   ngAfterContentInit() {
     // set default selected
     this.navigateTo();
