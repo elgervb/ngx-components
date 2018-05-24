@@ -21,7 +21,7 @@ export class WizardStepComponent implements OnInit {
   visited = false;
   private exitAllowed = true;
 
-  @ContentChildren(NgForm, { descendants: true }) forms: QueryList<NgForm>;
+  @ContentChildren(NgForm, { descendants: true }) forms?: QueryList<NgForm>;
 
   @HostBinding('class.wizard-step--selected')
   get isSelected() {

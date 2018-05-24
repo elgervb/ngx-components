@@ -55,4 +55,17 @@ describe('ButtonComponent', () => {
     expect(button.classList.contains('btn-mock')).toBe(true);
     expect(button.classList.contains('btn-mock-2')).toBe(true);
   });
+
+  it('should be possible to disable a button', () => {
+    expect(component.disabled).toBeFalsy();
+
+    component.disabled = true;
+    fixture.detectChanges();
+
+    expect(component.disabled).toBe(true);
+    const el = fixture.debugElement.nativeElement;
+
+    const button: HTMLButtonElement = el.querySelector('button');
+    expect(button.disabled).toBe(true);
+  });
 });

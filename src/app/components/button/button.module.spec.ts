@@ -4,7 +4,7 @@ describe('ButtonModule', () => {
   let buttonModule: ButtonModule;
 
   beforeEach(() => {
-    buttonModule = new ButtonModule();
+    buttonModule = ButtonModule.forRoot();
   });
 
   it('should create an instance', () => {

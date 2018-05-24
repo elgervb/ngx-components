@@ -1,4 +1,3 @@
-debugger;
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 @Component({
@@ -20,7 +19,8 @@ export class WizardFooterComponent {
 
 
   hasNext() {
-    if (!this.steps) return false;
+    if (!this.steps) { return false; }
+
     return this.steps.reduce((value, step, index, all) => {
       if (step.selected) {
         return all.length - 1 > index;
@@ -30,7 +30,8 @@ export class WizardFooterComponent {
   }
 
   hasPrevious() {
-    if (!this.steps) return false;
+    if (!this.steps) { return false; }
+
     return this.steps.reduce((value, step, index, all) => {
       if (step.selected) {
         return index > 0;
@@ -40,7 +41,8 @@ export class WizardFooterComponent {
   }
 
   isValid() {
-    if (!this.steps) return undefined;
+    if (!this.steps) { return true; }
+
     const currentStep = this.steps.find(step => step.selected);
     return currentStep ? currentStep.canExit : true;
   }
