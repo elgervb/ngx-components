@@ -5,6 +5,7 @@ import { WizardModule } from './wizard';
 import { FilePickerModule } from './file-picker';
 import { ProgressbarModule } from './progressbar';
 import { ListModule } from './list/list.module';
+import { MessageboxComponent } from './messagebox/messagebox.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { ListModule } from './list/list.module';
     ProgressbarModule.forRoot(),
     WizardModule.forRoot()
   ],
-  declarations: [],
+  declarations: [MessageboxComponent],
   exports: [
     ButtonModule,
     FilePickerModule,
