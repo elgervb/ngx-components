@@ -1,5 +1,21 @@
 
 <section>
+  <h2>cards</h2>
+
+  <evb-card style="width: 25%;">
+    <evb-card-header><h4>Header</h4></evb-card-header>
+    <evb-card-body>
+      Body
+    </evb-card-body>
+    <evb-card-footer align="right">
+        <evb-button (click)="handleClick($event)">cancel</evb-button>
+        <evb-button (click)="handleClick($event)">save</evb-button>
+    </evb-card-footer>
+  </evb-card>
+
+</section>
+
+<section>
   <h2>List</h2>
 
   <evb-list-filter [items]="listItemsObj" (filter)="onFilter($event)"></evb-list-filter>
@@ -72,8 +88,8 @@
   <h2>Buttons</h2>
 
   <evb-button class="test-btn" (click)="handleClick($event)">click me!</evb-button>
-  <evb-button type="submit" (click)="handleClick($event)">submit button</evb-button>
-  <evb-button disabled="true" (click)="handleClick($event)">disabled</evb-button>
+  <evb-button type="submit" (click)="handleClick($event)">submit <i>button</i></evb-button>
+  <evb-button disabled="true" (click)="handleClick($event)"><em>disabled</em></evb-button>
 </section>
 
 <section>

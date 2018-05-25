@@ -6,11 +6,13 @@ import { FilePickerModule } from './file-picker';
 import { ProgressbarModule } from './progressbar';
 import { ListModule } from './list/list.module';
 import { MessageboxComponent } from './messagebox/messagebox.component';
+import { CardModule } from './card/card.module';
 
 @NgModule({
   imports: [
-    CommonModule,
     ButtonModule.forRoot(),
+    CardModule.forRoot(),
+    CommonModule,
     FilePickerModule.forRoot(),
     ListModule.forRoot(),
     ProgressbarModule.forRoot(),
@@ -19,6 +21,7 @@ import { MessageboxComponent } from './messagebox/messagebox.component';
   declarations: [MessageboxComponent],
   exports: [
     ButtonModule,
+    CardModule,
     FilePickerModule,
     ListModule,
     ProgressbarModule,
