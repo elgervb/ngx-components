@@ -191,6 +191,7 @@
       true,
       "always"
     ],
+    "switch-default": true,
     "triple-equals": [
       true,
       "allow-null-check"

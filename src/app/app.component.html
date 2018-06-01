@@ -1,127 +1,132 @@
 
-<section>
-  <h2>cards</h2>
+<evb-container root="true" dir="col">
 
-  <evb-card style="width: 25%;">
-    <evb-card-header><h4>Header</h4></evb-card-header>
-    <evb-card-body>
-      Body
-    </evb-card-body>
-    <evb-card-footer align="right">
-        <evb-button (click)="handleClick($event)">cancel</evb-button>
-        <evb-button (click)="handleClick($event)">save</evb-button>
-    </evb-card-footer>
-  </evb-card>
+  <section>
+    <h2>cards</h2>
 
-</section>
+    <evb-card style="width: 50%;">
+      <evb-card-header><h4>Header</h4></evb-card-header>
+      <evb-card-body>
+        Body
+      </evb-card-body>
+      <evb-card-footer align="right">
+        <evb-container justify="right">
+          <evb-button (click)="handleClick($event)">cancel</evb-button>
+          <evb-button (click)="handleClick($event)">save</evb-button>
+        </evb-container>
+      </evb-card-footer>
+    </evb-card>
 
-<section>
-  <h2>List</h2>
+  </section>
 
-  <evb-list-filter [items]="listItemsObj" (filter)="onFilter($event)"></evb-list-filter>
+  <section>
+    <h2>List</h2>
 
-  <evb-list>
-    <evb-list-item *ngFor="let item of filteredItems">
-      <h5>{{item.name}}</h5>
-      <p>item: {{item | json}}</p>
-    </evb-list-item>
-  </evb-list>
-</section>
+    <evb-list-filter [items]="listItemsObj" (filter)="onFilter($event)"></evb-list-filter>
 
-<section>
-  <h2>Wizard</h2>
+    <evb-list>
+      <evb-list-item *ngFor="let item of filteredItems">
+        <h5>{{item.name}}</h5>
+        <p>item: {{item | json}}</p>
+      </evb-list-item>
+    </evb-list>
+  </section>
 
-  <evb-wizard>
-    <evb-wizard-header align="fill"></evb-wizard-header>
+  <section>
+    <h2>Wizard</h2>
 
-    <evb-wizard-step name="step1">
-      <p>evb-wizard-step-1</p>
-    </evb-wizard-step>
+    <evb-wizard>
+      <evb-wizard-header align="fill"></evb-wizard-header>
 
-    <evb-wizard-step name="step2">
-      <h2>evb-wizard-step-2</h2>
-      <p>It's required to fill in the name field to proceed to the next step.</p>
-      <form>
-        <div class="form-group">
-          <label for="name">Name (*)</label>
-          <input type="text" class="form-control" id="name" name="name" ngModel required>
-        </div>
-      </form>
-    </evb-wizard-step>
+      <evb-wizard-step name="step1">
+        <p>evb-wizard-step-1</p>
+      </evb-wizard-step>
 
-    <evb-wizard-step name="step3" [canExit]="proceed">
-      <p>evb-wizard-step-3</p>
-      <p> <i>{{proceed}}</i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget magna massa. Vivamus vehicula orci interdum ipsum aliquam, ut elementum lorem porttitor. Nulla eget orci justo. In egestas consectetur odio, quis fermentum ipsum condimentum vitae. Sed at tincidunt est. Vestibulum at enim eu eros vulputate consectetur. Phasellus facilisis massa id euismod mattis.</p>
+      <evb-wizard-step name="step2">
+        <h2>evb-wizard-step-2</h2>
+        <p>It's required to fill in the name field to proceed to the next step.</p>
+        <form>
+          <div class="form-group">
+            <label for="name">Name (*)</label>
+            <input type="text" class="form-control" id="name" name="name" ngModel required>
+          </div>
+        </form>
+      </evb-wizard-step>
 
-      <label>Check to proceed <input type="checkbox" (change)="toggleProceed()"></label>
-    </evb-wizard-step>
+      <evb-wizard-step name="step3" [canExit]="proceed">
+        <p>evb-wizard-step-3</p>
+        <p> <i>{{proceed}}</i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget magna massa. Vivamus vehicula orci interdum ipsum aliquam, ut elementum lorem porttitor. Nulla eget orci justo. In egestas consectetur odio, quis fermentum ipsum condimentum vitae. Sed at tincidunt est. Vestibulum at enim eu eros vulputate consectetur. Phasellus facilisis massa id euismod mattis.</p>
 
-    <evb-wizard-step name="step4">
-      <p>evb-wizard-step-4</p>
-      <ul>
-        <li> content list 1</li>
-        <li> content list 2</li>
-        <li> content list 3</li>
-        <li> content list 4</li>
-      </ul>
-    </evb-wizard-step>
+        <label>Check to proceed <input type="checkbox" (change)="toggleProceed()"></label>
+      </evb-wizard-step>
 
-    <evb-wizard-footer [btnPreviousText]="'Vorige'" [btnNextText]="'Volgende'" [btnCompleteText]="'Voltooien'"></evb-wizard-footer>
-  </evb-wizard>
-</section>
+      <evb-wizard-step name="step4">
+        <p>evb-wizard-step-4</p>
+        <ul>
+          <li> content list 1</li>
+          <li> content list 2</li>
+          <li> content list 3</li>
+          <li> content list 4</li>
+        </ul>
+      </evb-wizard-step>
 
-<section>
-  <h2>Panels</h2>
+      <evb-wizard-footer [btnPreviousText]="'Vorige'" [btnNextText]="'Volgende'" [btnCompleteText]="'Voltooien'"></evb-wizard-footer>
+    </evb-wizard>
+  </section>
 
-  <evb-panel root="true">
-    <div>line 1</div>
-    <div>line 2</div>
-  </evb-panel>
+  <section>
+    <h2>Container</h2>
 
-  <evb-panel class="mock" dir="col">
-    <div>line 1</div>
-    <div>line 2</div>
-  </evb-panel>
-</section>
+    <evb-container root="true" justify="left">
+      <div>line 1</div>
+      <div>line 2</div>
+    </evb-container>
 
-<section>
-  <h2>Buttons</h2>
+    <evb-container class="mock" dir="col">
+      <div>line 1</div>
+      <div>line 2</div>
+    </evb-container>
+  </section>
 
-  <evb-button class="test-btn" (click)="handleClick($event)">click me!</evb-button>
-  <evb-button type="submit" (click)="handleClick($event)">submit <i>button</i></evb-button>
-  <evb-button disabled="true" (click)="handleClick($event)"><em>disabled</em></evb-button>
-</section>
+  <section>
+    <h2>Buttons</h2>
 
-<section>
-  <h2>Filepicker</h2>
+    <evb-button class="test-btn" (click)="handleClick($event)">click me!</evb-button>
+    <evb-button type="submit" (click)="handleClick($event)">submit <i>button</i></evb-button>
+    <evb-button disabled="true" (click)="handleClick($event)"><em>disabled</em></evb-button>
+  </section>
 
-  <evb-file-picker [multiple]="true"></evb-file-picker>
+  <section>
+    <h2>Filepicker</h2>
 
-</section>
+    <evb-file-picker [multiple]="true"></evb-file-picker>
 
-<section>
-  <h2>Progress bar</h2>
+  </section>
 
-  <evb-progressbar [progress]="progressbar.progress"></evb-progressbar>
-  <input type="range" min="0" max="100" [(ngModel)]="progressbar.progress"> Progress: {{progressbar.progress}}%<br>
-  <evb-progressbar [progress]="progressbar.progress" [height]="32" [showText]="true"></evb-progressbar>
-</section>
+  <section>
+    <h2>Progress bar</h2>
 
-<section>
-  <h2>Donut</h2>
-  <input type="range" min="1" max="{{donut.diameter / 2}}" [(ngModel)]="donut.thickness"> Thickness: {{donut.thickness}} <br>
-  <input type="range" min="0" max="100" [(ngModel)]="donut.progress"> Progress: {{donut.progress}}% <br>
-  <input type="range" min="10" max="1000" [(ngModel)]="donut.diameter"> Diameter: {{donut.diameter}}<br>
-  <input type="checkbox" id="invertDirection" [(ngModel)]="donut.invertDirection"><label for="invertDirection">Invert direction</label>
-  <input type="checkbox" id="showText" [(ngModel)]="donut.showText"><label for="showText">Show text</label>
-  <hr>
+    <evb-progressbar [progress]="progressbar.progress"></evb-progressbar>
+    <input type="range" min="0" max="100" [(ngModel)]="progressbar.progress"> Progress: {{progressbar.progress}}%<br>
+    <evb-progressbar [progress]="progressbar.progress" [height]="32" [showText]="true"></evb-progressbar>
+  </section>
 
-  <evb-donut
-    [invertDirection]="donut.invertDirection"
-    [progress]="donut.progress"
-    [showText]="donut.showText"
-    [thickness]="donut.thickness"
-    [diameter]="donut.diameter">
-  </evb-donut>
+  <section>
+    <h2>Donut</h2>
+    <input type="range" min="1" max="{{donut.diameter / 2}}" [(ngModel)]="donut.thickness"> Thickness: {{donut.thickness}} <br>
+    <input type="range" min="0" max="100" [(ngModel)]="donut.progress"> Progress: {{donut.progress}}% <br>
+    <input type="range" min="10" max="1000" [(ngModel)]="donut.diameter"> Diameter: {{donut.diameter}}<br>
+    <input type="checkbox" id="invertDirection" [(ngModel)]="donut.invertDirection"><label for="invertDirection">Invert direction</label>
+    <input type="checkbox" id="showText" [(ngModel)]="donut.showText"><label for="showText">Show text</label>
+    <hr>
 
-</section>
+    <evb-donut
+      [invertDirection]="donut.invertDirection"
+      [progress]="donut.progress"
+      [showText]="donut.showText"
+      [thickness]="donut.thickness"
+      [diameter]="donut.diameter">
+    </evb-donut>
+
+  </section>
+</evb-container>

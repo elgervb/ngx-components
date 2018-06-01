@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  width: 100%;
+}
+
+:host(.evb-container--root) {
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+:host(.evb-container--row) {
+  flex-direction: row;
+}
+
+:host(.evb-container--col) {
+  flex-direction: column;
+}
+
+:host(.evb-container--left) {
+  justify-content: flex-start;
+}
+:host(.evb-container--right) {
+  justify-content: flex-end;
+}
+:host(.evb-container--center) {
+  justify-content: center;
+}
+:host(.evb-container--around) {
+  justify-content: space-around;
+}
+:host(.evb-container--evenly) {
+  justify-content: space-evenly;
+}
+:host(.evb-container--between) {
+  justify-content: space-between;
+}
