@@ -28,6 +28,8 @@ export class AppComponent {
     }
   ];
 
+  filteredItems: ListItem[] = this.listItemsObj;
+
   donut = {
     thickness: 10,
     progress: 40,
@@ -44,7 +46,6 @@ export class AppComponent {
     console.log('clicked button', event.target);
   }
 
-  filteredItems: any = this.listItemsObj;
   onFilter(filterStr: string) {
     this.filteredItems = this.listItemsObj.filter(item => filter(item, filterStr));
   }
@@ -52,4 +53,9 @@ export class AppComponent {
   toggleProceed() {
     this.proceed = !this.proceed;
   }
+}
+
+interface ListItem {
+  name: string;
+  data: string;
 }
