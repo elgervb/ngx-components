@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { DonutComponent } from './charts/donut/donut.component';
-import { PanelComponent } from './panel/panel.component';
 import { AppRoutingModule } from './app-routing.module';
 import { EvbComponentsModule } from './components/evb-components.module';
 
@@ -12,7 +11,6 @@ import { EvbComponentsModule } from './components/evb-components.module';
   declarations: [
     AppComponent,
     DonutComponent,
-    PanelComponent,
   ],
   imports: [
     AppRoutingModule,

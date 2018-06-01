@@ -7,12 +7,15 @@ import { ProgressbarModule } from './progressbar';
 import { ListModule } from './list/list.module';
 import { MessageboxComponent } from './messagebox/messagebox.component';
 import { CardModule } from './card/card.module';
+import { ContainerModule } from './container/container.module';
+import { ContainerComponent } from './container';
 
 @NgModule({
   imports: [
     ButtonModule.forRoot(),
     CardModule.forRoot(),
     CommonModule,
+    ContainerModule.forRoot(),
     FilePickerModule.forRoot(),
     ListModule.forRoot(),
     ProgressbarModule.forRoot(),
@@ -22,6 +25,7 @@ import { CardModule } from './card/card.module';
   exports: [
     ButtonModule,
     CardModule,
+    ContainerComponent,
     FilePickerModule,
     ListModule,
     ProgressbarModule,
