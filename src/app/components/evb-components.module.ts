@@ -9,11 +9,13 @@ import { MessageboxComponent } from './messagebox/messagebox.component';
 import { CardModule } from './card/card.module';
 import { ContainerModule } from './container/container.module';
 import { ContainerComponent } from './container';
+import { ChartsModule } from './charts/charts.module';
 
 @NgModule({
   imports: [
     ButtonModule.forRoot(),
     CardModule.forRoot(),
+    ChartsModule.forRoot(),
     CommonModule,
     ContainerModule.forRoot(),
     FilePickerModule.forRoot(),
@@ -24,6 +26,7 @@ import { ContainerComponent } from './container';
   declarations: [MessageboxComponent],
   exports: [
     ButtonModule,
+    ChartsModule,
     CardModule,
     ContainerComponent,
     FilePickerModule,
