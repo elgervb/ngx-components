@@ -6,7 +6,12 @@ import { SpinnerBallsComponent } from './spinner-balls/spinner-balls.component';
   imports: [
     CommonModule
   ],
-  declarations: [SpinnerBallsComponent]
+  declarations: [
+    SpinnerBallsComponent
+  ],
+  exports: [
+    SpinnerBallsComponent
+  ]
 })
 export class SpinnerModule {
   static forRoot(): ModuleWithProviders {
