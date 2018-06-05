@@ -1,5 +1,6 @@
 
-$spinner-animation-duration: 1s !default;
+$spinner-animation-duration: .75s !default;
+$spinner-animation-delay: $spinner-animation-duration / 4;
 
 :host {
   display: flex;
@@ -8,29 +9,30 @@ $spinner-animation-duration: 1s !default;
 }
 
 .spinner-ball {
-  animation: bounce $spinner-animation-duration cubic-bezier(.66, .02, .21, 1) 0s infinite;
+  animation: bounce $spinner-animation-duration linear 0s infinite;
   background-color: currentColor;
   border-radius: 50%;
   height: 1em;
   margin-right: .33em;
-  transition: all .3s ease-in-out;
   width: 1em;
 }
 
-.spinner-ball-1 {
-  animation-delay: 0;
-}
-
 .spinner-ball-2 {
-  animation-delay: .15s;
+  animation-delay: $spinner-animation-delay;
 }
 
 .spinner-ball-3 {
-  animation-delay: .3s;
+  animation-delay: $spinner-animation-delay * 2;
 }
 
 @keyframes bounce {
-  50% {
+  25% {
     transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(50%);
   }
 }
