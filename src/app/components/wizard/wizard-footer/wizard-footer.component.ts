@@ -17,7 +17,6 @@ export class WizardFooterComponent {
   @Output() previous = new EventEmitter<void>();
   @Output() complete = new EventEmitter<void>();
 
-
   hasNext() {
     if (!this.steps) { return false; }
 
@@ -56,6 +55,7 @@ export class WizardFooterComponent {
   }
 
   sendComplete() {
+    debugger;
     this.complete.emit();
   }
 }

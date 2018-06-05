@@ -1,17 +1,42 @@
+@import 'src/app/components/variables.scss';
+
+$btn-hover-darken: $hover-darken !default;
 
 .btn {
   border: none;
   background: none;
   cursor: pointer;
+  margin: 0 .25rem;
   padding: .8rem 1rem;
   transition: all .2s ease-in;
 
   &:hover {
-    background-color: #f4f4f4;
+    background-color: $color-secondary;
   }
 
   &:disabled {
     cursor: not-allowed;
-    background: inherit;
+    opacity: .7;
+
+    &:hover {
+      background: default;
+    }
+  }
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  color: $color-primary-contrast;
+
+  &:hover {
+    background-color: darken($color-primary, $btn-hover-darken);
+  }
+}
+
+.btn-secondary {
+  background-color: $color-secondary;
+
+  &:hover {
+    background-color: darken($color-secondary, $btn-hover-darken);
   }
 }

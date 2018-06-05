@@ -1,15 +1,15 @@
 
 <div class="wizard__footer">
-  <evb-button type="button" class="btn btn-secondary wizard__btn-previous"
+  <evb-button type="button" variant="secondary" class="wizard__btn-previous"
     (click)="navigatePrevious()"
     [disabled]="!hasPrevious() || !isValid()">{{btnPreviousText}}</evb-button>
 
-  <evb-button type="button" class="btn btn-secondary wizard__btn-next"
+  <evb-button type="button" variant="secondary" class="wizard__btn-next"
     (click)="navigateNext()"
     [disabled]="!isValid()"
     *ngIf="hasNext()">{{btnNextText}}</evb-button>
 
-  <evb-button type="button" class="btn btn-primary wizard__btn-complete"
+  <evb-button type="button" variant="primary" class="btn--wizard-complete"
     *ngIf="!hasNext()"
     [disabled]="!isValid()"
     (click)="sendComplete()">{{btnCompleteText}}</evb-button>
