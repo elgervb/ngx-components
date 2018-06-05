@@ -13,6 +13,7 @@ import { WizardModule } from './wizard';
 import { FormModule } from './form/form.module';
 import { DrawingModule } from './drawing/drawing.module';
 import { ModalModule } from './modal/modal.module';
+import { SpinnerModule } from './spinner/spinner.module';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { ModalModule } from './modal/modal.module';
     ListModule.forRoot(),
     ModalModule.forFeature(),
     ProgressbarModule.forRoot(),
+    SpinnerModule.forRoot(),
     WizardModule.forRoot()
   ],
   exports: [
@@ -43,6 +45,7 @@ import { ModalModule } from './modal/modal.module';
     ListModule,
     ModalModule,
     ProgressbarModule,
+    SpinnerModule,
     WizardModule
   ]
 })

@@ -1,0 +1,11 @@
+
+:host {
+  width: 4em;
+}
+
+.spinner-ball {
+  background-color: currentColor;
+  height: 1em;
+  transition: all .3s ease-in-out;
+  width: 1em;
+}
