@@ -2,6 +2,14 @@
 <evb-container root="true" dir="col">
 
   <section>
+    <h2>flyout</h2>
+    <button [evbFlyoutToggle]="flyout">open</button>
+    <evb-flyout #flyout>
+      <evb-flyout-header title="flyout"></evb-flyout-header>
+    </evb-flyout>
+  </section>
+
+  <section>
     <h2>cards</h2>
 
     <evb-card style="width: 50%;">

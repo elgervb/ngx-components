@@ -1,15 +1,15 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ButtonModule } from './button';
-import { WizardModule } from './wizard';
-import { FilePickerModule } from './file-picker';
-import { ProgressbarModule } from './progressbar';
-import { ListModule } from './list/list.module';
-import { MessageboxComponent } from './messagebox/messagebox.component';
 import { CardModule } from './card/card.module';
-import { ContainerModule } from './container/container.module';
-import { ContainerComponent } from './container';
 import { ChartsModule } from './charts/charts.module';
+import { ContainerComponent } from './container';
+import { ContainerModule } from './container/container.module';
+import { FilePickerModule } from './file-picker';
+import { FlyoutModule } from './flyout/flyout.module';
+import { ListModule } from './list/list.module';
+import { ProgressbarModule } from './progressbar';
+import { WizardModule } from './wizard';
 
 @NgModule({
   imports: [
@@ -19,11 +19,11 @@ import { ChartsModule } from './charts/charts.module';
     CommonModule,
     ContainerModule.forRoot(),
     FilePickerModule.forRoot(),
+    FlyoutModule.forRoot(),
     ListModule.forRoot(),
     ProgressbarModule.forRoot(),
     WizardModule.forRoot()
   ],
-  declarations: [MessageboxComponent],
   exports: [
     ButtonModule,
     ChartsModule,
@@ -31,6 +31,7 @@ import { ChartsModule } from './charts/charts.module';
     ChartsModule,
     ContainerComponent,
     FilePickerModule,
+    FlyoutModule,
     ListModule,
     ProgressbarModule,
     WizardModule
