@@ -1,3 +1,5 @@
+@import 'src/app/components/variables.scss';
+
 :host {
   display: inline-flex;
   position: relative;
@@ -25,11 +27,11 @@
 }
 
 .progress__meter {
-  stroke: #e6e6e6;
+  stroke: $color-secondary;
 }
 
 .progress__value {
-  stroke: #f77a52;
+  stroke: $color-primary;
 
   &.arc-left {
     transform: scaleY(-1);

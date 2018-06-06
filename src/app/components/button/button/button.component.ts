@@ -3,8 +3,8 @@ import { Component, OnInit, Attribute, Input, Output, EventEmitter } from '@angu
 @Component({
   selector: 'evb-button',
   template: `
-    <button class="btn {{clazz}}"
-      [type]="type || 'button'"
+    <button [class]="classes"
+      [type]="type"
       [disabled]="disabled">
       <ng-content></ng-content>
     </button>
@@ -18,8 +18,16 @@ export class ButtonComponent implements OnInit {
 
   constructor(
     @Attribute('class') public clazz?: string,
-    @Attribute('type') public type?: string
+    @Attribute('type') public type = 'button',
+    @Attribute('variant') public variant?: 'primary' | 'secondary'
   ) { }
 
   ngOnInit() { }
+
+  get classes() {
+    const variantClass = this.variant ? `btn-${this.variant}` : '';
+    const userClass = this.clazz ? this.clazz : '';
+
+    return `btn ${userClass} ${variantClass}`;
+  }
 }

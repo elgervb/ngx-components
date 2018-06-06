@@ -1,5 +1,7 @@
-$progressbar-background: #dfdfdf !default;
-$progressbar-foreground: #51c87b !default;
+@import 'src/app/components/variables.scss';
+
+$progressbar-background: $color-secondary !default;
+$progressbar-foreground: $color-primary !default;
 $progressbar-height: .25rem !default;
 $progressbar-width: 100% !default;
 $progressbar-color: darken($progressbar-foreground, 10%) !default;

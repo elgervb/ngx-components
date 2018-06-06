@@ -1,3 +1,5 @@
+@import 'src/app/components/variables.scss';
+
 :host {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
 
 
 .filepicker__droparea {
-  border: 4px dashed #dfdfdf;
+  border: 4px dashed $color-secondary;
   margin: 1rem;
   padding: 3rem 0;
   position: relative;
@@ -64,7 +66,7 @@ input[type=file].form-control {
 
   .filepicker__thumbs__delete {
     align-items: center;
-    background-color: rgba(#51c87b, .5);
+    background-color: rgba($color-primary, .5);
     color: #fff;
     display: flex;
     font-size: 2em;

@@ -78,10 +78,11 @@ describe('WizardFooterComponent', () => {
     let emitted = false;
     component.complete.subscribe(() => emitted = true);
 
-    const nextBtn1 = fixture.debugElement.query(By.css('.wizard__btn-complete'));
-    expect(nextBtn1).toBeDefined();
-    nextBtn1.triggerEventHandler('click', undefined);
+    const completeBtn = fixture.debugElement.query(By.css('.btn--wizard-complete'));
+    expect(completeBtn).toBeDefined();
 
-    expect(emitted).toBe(true);
+    completeBtn.triggerEventHandler('click', undefined);
+
+    expect(emitted).toBe(true, 'Complete button did not emit');
   });
 });

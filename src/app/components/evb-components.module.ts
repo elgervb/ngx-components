@@ -26,6 +26,7 @@ import { ChartsModule } from './charts/charts.module';
   declarations: [MessageboxComponent],
   exports: [
     ButtonModule,
+    ChartsModule,
     CardModule,
     ChartsModule,
     ContainerComponent,
