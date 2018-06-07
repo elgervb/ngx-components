@@ -1,13 +1,32 @@
 
 <evb-container root="true" dir="col">
 
-  <section>
+    <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+      <evb-formcontrol label="Test 1">
+        <input type="text" formControlName="test1" autofocus />
+      </evb-formcontrol>
+
+      <evb-formcontrol label="Test 2">
+        <input type="number" formControlName="test2" />
+      </evb-formcontrol>
+
+      <evb-formcontrol label="Test 3">
+        <textarea formControlName="test3"></textarea>
+      </evb-formcontrol>
+
+      <evb-container>
+        <evb-button type="button" (click)="cancel()">cancel</evb-button>
+        <evb-button type="submit">Submit</evb-button>
+      </evb-container>
+</form>
+
+  <!-- <section>
     <h2>flyout</h2>
     <button [evbFlyoutToggle]="flyout">open</button>
     <evb-flyout #flyout>
       <evb-flyout-header title="flyout"></evb-flyout-header>
     </evb-flyout>
-  </section>
+  </section> -->
 
   <section>
     <h2>cards</h2>

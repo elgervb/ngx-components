@@ -1,0 +1,25 @@
+
+:host {
+  align-items: flex-start;
+  display: flex;
+  margin-bottom: .5rem;
+}
+
+:host ::ng-deep label,
+:host ::ng-deep textarea,
+:host ::ng-deep input {
+  font-family: inherit;
+  font-size: inherit;
+  padding: .5rem;
+  width: 13rem;
+}
+:host ::ng-deep label {
+  border: 1px solid transparent;
+}
+:host ::ng-deep input,
+:host ::ng-deep textarea {
+  border: 1px solid #e4e4e4;
+}
+:host ::ng-deep textarea {
+  min-height: 8rem;
+}
