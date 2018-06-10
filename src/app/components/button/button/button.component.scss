@@ -14,6 +14,10 @@ $btn-hover-darken: $hover-darken !default;
     background-color: $color-secondary;
   }
 
+  &:focus {
+    outline: $color-primary auto .25rem;
+  }
+
   &:disabled {
     cursor: not-allowed;
     opacity: .7;
@@ -38,5 +42,17 @@ $btn-hover-darken: $hover-darken !default;
 
   &:hover {
     background-color: darken($color-secondary, $btn-hover-darken);
+  }
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: $color-primary;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-primary-contrast;
+    border-color: $color-primary-contrast;
   }
 }
