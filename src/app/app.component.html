@@ -7,7 +7,7 @@
       </evb-formcontrol>
 
       <evb-formcontrol label="Test 2">
-        <input type="number" formControlName="test2" />
+        <input type="number" formControlName="test2" required />
       </evb-formcontrol>
 
       <evb-formcontrol label="Test 3">
@@ -16,7 +16,7 @@
 
       <evb-container>
         <evb-button type="button" (click)="cancel()">cancel</evb-button>
-        <evb-button type="submit">Submit</evb-button>
+        <evb-button type="submit" variant="primary">Submit</evb-button>
       </evb-container>
 </form>
 
@@ -133,6 +133,8 @@
     <evb-button variant="primary" disabled="true" (click)="handleClick($event)">Primary disabled</evb-button>
     <evb-button variant="secondary" (click)="handleClick($event)">Secondary</evb-button>
     <evb-button variant="secondary" disabled="true" (click)="handleClick($event)">Secondary disabled</evb-button>
+    <evb-button variant="ghost" (click)="handleClick($event)">Ghost</evb-button>
+    <evb-button variant="ghost" disabled="true" (click)="handleClick($event)">Ghost disabled</evb-button>
   </section>
 
   <section>

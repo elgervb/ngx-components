@@ -1,3 +1,4 @@
+@import 'src/app/components/variables.scss';
 
 :host {
   align-items: flex-start;
@@ -19,7 +20,12 @@
 :host ::ng-deep input,
 :host ::ng-deep textarea {
   border: 1px solid #e4e4e4;
+
+  &:focus {
+    outline: $color-primary auto .25rem;
+  }
 }
 :host ::ng-deep textarea {
   min-height: 8rem;
+  resize: vertical;
 }

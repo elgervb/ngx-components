@@ -19,7 +19,7 @@ export class ButtonComponent implements OnInit {
   constructor(
     @Attribute('class') public clazz?: string,
     @Attribute('type') public type = 'button',
-    @Attribute('variant') public variant?: 'primary' | 'secondary'
+    @Attribute('variant') public variant?: 'primary' | 'secondary' | 'ghost'
   ) { }
 
   ngOnInit() { }
