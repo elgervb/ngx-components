@@ -11,6 +11,7 @@ import { ListModule } from './list/list.module';
 import { ProgressbarModule } from './progressbar';
 import { WizardModule } from './wizard';
 import { FormModule } from './form/form.module';
+import { DrawingModule } from './drawing/drawing.module';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { FormModule } from './form/form.module';
     ChartsModule.forRoot(),
     CommonModule,
     ContainerModule.forRoot(),
+    DrawingModule.forRoot(),
     FilePickerModule.forRoot(),
     // FlyoutModule.forRoot(),
     FormModule.forRoot(),
@@ -32,6 +34,7 @@ import { FormModule } from './form/form.module';
     CardModule,
     ChartsModule,
     ContainerComponent,
+    DrawingModule,
     FilePickerModule,
     // FlyoutModule,
     FormModule,
