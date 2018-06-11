@@ -6,10 +6,12 @@ import { ChartsModule } from './charts/charts.module';
 import { ContainerComponent } from './container';
 import { ContainerModule } from './container/container.module';
 import { FilePickerModule } from './file-picker';
-import { FlyoutModule } from './flyout/flyout.module';
+// import { FlyoutModule } from './flyout/flyout.module';
 import { ListModule } from './list/list.module';
 import { ProgressbarModule } from './progressbar';
 import { WizardModule } from './wizard';
+import { FormModule } from './form/form.module';
+import { DrawingModule } from './drawing/drawing.module';
 
 @NgModule({
   imports: [
@@ -18,8 +20,10 @@ import { WizardModule } from './wizard';
     ChartsModule.forRoot(),
     CommonModule,
     ContainerModule.forRoot(),
+    DrawingModule.forRoot(),
     FilePickerModule.forRoot(),
-    FlyoutModule.forRoot(),
+    // FlyoutModule.forRoot(),
+    FormModule.forRoot(),
     ListModule.forRoot(),
     ProgressbarModule.forRoot(),
     WizardModule.forRoot()
@@ -30,8 +34,10 @@ import { WizardModule } from './wizard';
     CardModule,
     ChartsModule,
     ContainerComponent,
+    DrawingModule,
     FilePickerModule,
-    FlyoutModule,
+    // FlyoutModule,
+    FormModule,
     ListModule,
     ProgressbarModule,
     WizardModule

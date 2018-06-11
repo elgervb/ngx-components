@@ -1,16 +1,17 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { filter } from './components/list';
 import { WizardComponent } from './components/wizard/wizard/wizard.component';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'evb-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   @ViewChild(WizardComponent) wizard: WizardComponent;
   proceed = false;
-
+  form: FormGroup;
   listItemsObj = [
     {
       name: 'item 1',
@@ -42,6 +43,16 @@ export class AppComponent {
     progress: 20
   };
 
+  constructor(private builder: FormBuilder) { }
+
+  ngOnInit() {
+    this.form = this.builder.group({
+      test1: [''],
+      test2: [''],
+      test3: ['']
+    });
+  }
+
   handleClick(arg: string) {
     console.log('clicked button', event.target);
   }
@@ -50,9 +61,19 @@ export class AppComponent {
     this.filteredItems = this.listItemsObj.filter(item => filter(item, filterStr));
   }
 
+  cancel() {
+    this.form.reset();
+  }
+
+  submit(value: { test1: string, test2: string }) {
+    console.log('Form submitted', value);
+  }
+
   toggleProceed() {
     this.proceed = !this.proceed;
   }
+
+
 }
 
 interface ListItem {
