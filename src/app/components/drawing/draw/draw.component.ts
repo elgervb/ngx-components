@@ -22,9 +22,11 @@ export class DrawComponent implements OnInit {
 
   ngOnInit() {
     const canvas: HTMLCanvasElement = this.canvasEl.nativeElement;
+
     this.ctx = canvas.getContext('2d');
 
     canvas.onmousedown = (evt: MouseEvent) => {
+      const canvasBox = canvas.getBoundingClientRect();
       this.isDrawing = true;
       this.ctx.lineWidth = this.lineWidth;
       this.ctx.lineJoin = this.ctx.lineCap = 'round';
@@ -32,11 +34,12 @@ export class DrawComponent implements OnInit {
       this.ctx.strokeStyle = this.color;
 
       this.ctx.beginPath();
-      this.ctx.moveTo(evt.clientX, evt.clientY);
+      this.ctx.moveTo(evt.clientX - canvasBox.left, evt.clientY - canvasBox.top);
     };
     canvas.onmousemove = (evt: MouseEvent) => {
+      const canvasBox = canvas.getBoundingClientRect();
       if (this.isDrawing) {
-        this.ctx.lineTo(evt.clientX, evt.clientY);
+        this.ctx.lineTo(evt.clientX - canvasBox.left, evt.clientY - canvasBox.top);
         this.ctx.stroke();
       }
     };
