@@ -1,9 +1,18 @@
-<evb-draw height="500" width="800" [lineWidth]="width.value" [color]="color.value"></evb-draw><br />
-<input type="color" value="#000000" #color placeholder="Pick a color" /> <br />
-<input type="number" value="1" #width placeholder="Pick a width" /><br />
+
 
 <evb-container root="true" dir="col">
 
+  <section>
+    <h2>drawing</h2>
+
+    <evb-draw height="500" width="800" [lineWidth]="width.value" [color]="color.value"></evb-draw><br />
+    <input type="color" value="#000000" #color placeholder="Pick a color" /> <br />
+    <input type="number" value="1" #width placeholder="Pick a width" /><br />
+
+  </section>
+
+  <section>
+    <h2>forms</h2>
     <form [formGroup]="form" (ngSubmit)="submit(form.value)">
       <evb-formcontrol label="Test 1">
         <input type="text" formControlName="test1" autofocus />
@@ -21,15 +30,16 @@
         <evb-button type="button" (click)="cancel()">cancel</evb-button>
         <evb-button type="submit" variant="primary">Submit</evb-button>
       </evb-container>
-</form>
+    </form>
+  </section>
 
-  <!-- <section>
+  <section>
     <h2>flyout</h2>
     <button [evbFlyoutToggle]="flyout">open</button>
     <evb-flyout #flyout>
       <evb-flyout-header title="flyout"></evb-flyout-header>
     </evb-flyout>
-  </section> -->
+  </section>
 
   <section>
     <h2>cards</h2>

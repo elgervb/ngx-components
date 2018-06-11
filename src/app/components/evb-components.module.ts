@@ -6,7 +6,7 @@ import { ChartsModule } from './charts/charts.module';
 import { ContainerComponent } from './container';
 import { ContainerModule } from './container/container.module';
 import { FilePickerModule } from './file-picker';
-// import { FlyoutModule } from './flyout/flyout.module';
+import { FlyoutModule } from './flyout/flyout.module';
 import { ListModule } from './list/list.module';
 import { ProgressbarModule } from './progressbar';
 import { WizardModule } from './wizard';
@@ -22,7 +22,7 @@ import { DrawingModule } from './drawing/drawing.module';
     ContainerModule.forRoot(),
     DrawingModule.forRoot(),
     FilePickerModule.forRoot(),
-    // FlyoutModule.forRoot(),
+    FlyoutModule.forRoot(),
     FormModule.forRoot(),
     ListModule.forRoot(),
     ProgressbarModule.forRoot(),
@@ -36,7 +36,7 @@ import { DrawingModule } from './drawing/drawing.module';
     ContainerComponent,
     DrawingModule,
     FilePickerModule,
-    // FlyoutModule,
+    FlyoutModule,
     FormModule,
     ListModule,
     ProgressbarModule,
