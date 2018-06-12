@@ -1,3 +1,2 @@
 export * from './pen';
-export * from './models';
-export * from './utils';
+export * from '../models';

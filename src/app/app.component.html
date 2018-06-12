@@ -8,6 +8,8 @@
     <evb-draw height="500" width="800" [lineWidth]="width.value" [color]="color.value"></evb-draw><br />
     <input type="color" value="#000000" #color placeholder="Pick a color" />
     <input type="number" value="4" #width placeholder="Pick a width" /><br />
+    <evb-button (click)="setBrushType(brushType.pen)">pen</evb-button>
+    <evb-button (click)="setBrushType(brushType.brush)">brush</evb-button>
 
   </section>
 

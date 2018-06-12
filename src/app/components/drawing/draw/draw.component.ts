@@ -1,7 +1,8 @@
 import { Component, OnInit, OnChanges, Input, ViewChild, ElementRef } from '@angular/core';
 
-import { Point } from '../brushes';
+import { Point, Pen, BrushType } from '../brushes';
 import { Brush } from '../brushes/brush';
+import { brushFactory } from '../brushes/brush.factory';
 
 @Component({
   selector: 'evb-draw',
@@ -16,22 +17,20 @@ export class DrawComponent implements OnInit, OnChanges {
   @Input() height = 500;
   @Input() lineWidth = 1;
   @Input() color = '#000';
+  @Input() brushType: BrushType;
 
   @ViewChild('canvas') private canvasEl: ElementRef;
+  private brush: Pen | Brush;
 
   private isDrawing = false;
   private ctx: CanvasRenderingContext2D;
-  private brush: Brush;
 
   constructor() { }
 
   ngOnInit() {
     const canvas: HTMLCanvasElement = this.canvasEl.nativeElement;
-    this.brush = new Brush({
-      canvas,
-      color: this.color,
-      lineWidth: this.lineWidth
-    });
+
+    this.setBrush(this.brushType || BrushType.pen);
 
     this.ctx = canvas.getContext('2d');
 
@@ -55,7 +54,9 @@ export class DrawComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    this.brush.setContext(this.createContext());
+    if (this.brush) {
+      this.brush.setContext(this.createContext());
+    }
   }
 
   private createContext() {
@@ -70,6 +71,13 @@ export class DrawComponent implements OnInit, OnChanges {
     this.ctx.clearRect(0, 0, this.canvasEl.nativeElement.width, this.canvasEl.nativeElement.height);
   }
 
+  setBrush(type: BrushType) {
+    this.brush = brushFactory(type, {
+      canvas: this.canvasEl.nativeElement,
+      color: this.color,
+      lineWidth: this.lineWidth
+    });
+  }
 }
 
 
