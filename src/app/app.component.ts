@@ -2,6 +2,8 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { filter } from './components/list';
 import { WizardComponent } from './components/wizard/wizard/wizard.component';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { BrushType } from './components/drawing';
+import { DrawComponent } from './components/drawing/draw/draw.component';
 
 @Component({
   selector: 'evb-root',
@@ -10,6 +12,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class AppComponent implements OnInit {
 
   @ViewChild(WizardComponent) wizard: WizardComponent;
+  @ViewChild(DrawComponent) drawCanvas: DrawComponent;
+
   proceed = false;
   form: FormGroup;
   listItemsObj = [
@@ -22,8 +26,7 @@ export class AppComponent implements OnInit {
     }, {
       name: 'item 3',
       data: 'qwer'
-    }
-    , {
+    }, {
       name: 'item 4',
       data: 'qwer'
     }
@@ -42,6 +45,8 @@ export class AppComponent implements OnInit {
   progressbar = {
     progress: 20
   };
+
+  brushType = BrushType;
 
   constructor(private builder: FormBuilder) { }
 
@@ -73,7 +78,9 @@ export class AppComponent implements OnInit {
     this.proceed = !this.proceed;
   }
 
-
+  setBrushType(type: BrushType) {
+    this.drawCanvas.setBrush(type);
+  }
 }
 
 interface ListItem {

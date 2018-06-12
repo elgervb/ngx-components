@@ -8,3 +8,8 @@ export interface Point {
   x: number;
   y: number;
 }
+
+export enum BrushType {
+  pen = 'pen',
+  brush = 'brush'
+}
