@@ -44,7 +44,6 @@ export class DrawComponent implements OnInit, OnChanges {
     canvas.onmousemove = (evt: MouseEvent) => {
       if (this.isDrawing) {
         this.brush.move(getMousePosition(evt, canvas));
-
       }
     };
     canvas.onmouseup = (evt: MouseEvent) => {
