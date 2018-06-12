@@ -1,4 +1,7 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, ViewChild, ElementRef } from '@angular/core';
+
+import { Point } from '../brushes';
+import { Brush } from '../brushes/brush';
 
 @Component({
   selector: 'evb-draw',
@@ -7,7 +10,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
   `,
   styleUrls: ['./draw.component.scss']
 })
-export class DrawComponent implements OnInit {
+export class DrawComponent implements OnInit, OnChanges {
 
   @Input() width = 500;
   @Input() height = 500;
@@ -18,34 +21,48 @@ export class DrawComponent implements OnInit {
 
   private isDrawing = false;
   private ctx: CanvasRenderingContext2D;
+  private brush: Brush;
+
   constructor() { }
 
   ngOnInit() {
     const canvas: HTMLCanvasElement = this.canvasEl.nativeElement;
+    this.brush = new Brush({
+      canvas,
+      color: this.color,
+      lineWidth: this.lineWidth
+    });
 
     this.ctx = canvas.getContext('2d');
 
     canvas.onmousedown = (evt: MouseEvent) => {
-      const canvasBox = canvas.getBoundingClientRect();
+
       this.isDrawing = true;
-      this.ctx.lineWidth = this.lineWidth;
-      this.ctx.lineJoin = this.ctx.lineCap = 'round';
 
-      this.ctx.strokeStyle = this.color;
-
-      this.ctx.beginPath();
-      this.ctx.moveTo(evt.clientX - canvasBox.left, evt.clientY - canvasBox.top);
+      this.brush.down(getMousePosition(evt, canvas));
     };
+
     canvas.onmousemove = (evt: MouseEvent) => {
-      const canvasBox = canvas.getBoundingClientRect();
       if (this.isDrawing) {
-        this.ctx.lineTo(evt.clientX - canvasBox.left, evt.clientY - canvasBox.top);
-        this.ctx.stroke();
+        this.brush.move(getMousePosition(evt, canvas));
+
       }
     };
-    canvas.onmouseup = () => {
+    canvas.onmouseup = (evt: MouseEvent) => {
       this.isDrawing = false;
-      this.ctx.closePath();
+      this.brush.up(getMousePosition(evt, canvas));
+    };
+  }
+
+  ngOnChanges() {
+    this.brush.setContext(this.createContext());
+  }
+
+  private createContext() {
+    return {
+      canvas: this.canvasEl.nativeElement,
+      color: this.color,
+      lineWidth: this.lineWidth
     };
   }
 
@@ -53,4 +70,11 @@ export class DrawComponent implements OnInit {
     this.ctx.clearRect(0, 0, this.canvasEl.nativeElement.width, this.canvasEl.nativeElement.height);
   }
 
+}
+
+
+function getMousePosition(evt: MouseEvent, el: Element): Point {
+  const box = el.getBoundingClientRect();
+
+  return { x: evt.clientX - box.left, y: evt.clientY - box.top };
 }
