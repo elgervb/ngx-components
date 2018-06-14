@@ -1,6 +1,5 @@
-import { BrushContext, Point } from './models';
-import { getColor, hex2rgb, averageColor, rgb2string } from './utils';
-
+import { BrushContext, Point } from '../models';
+import { getColor, hex2rgb, averageColor, rgb2string } from '../utils';
 
 export class CircularFill {
 
@@ -34,7 +33,7 @@ export class CircularFill {
       this.ctx.strokeStyle = this.context.color;
     }
     // tslint:disable
-    this.ctx.globalAlpha = .1;
+    // this.ctx.globalAlpha = .1;
     this.ctx.lineJoin = this.ctx.lineCap = 'round';
     this.ctx.beginPath();
     this.ctx.moveTo(this.previous.x, this.previous.y);
