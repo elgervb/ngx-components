@@ -78,10 +78,3 @@ export class DrawComponent implements OnInit, OnChanges {
     });
   }
 }
-
-
-function getMousePosition(evt: MouseEvent, el: Element): Point {
-  const box = el.getBoundingClientRect();
-
-  return { x: evt.clientX - box.left, y: evt.clientY - box.top };
-}
