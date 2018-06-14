@@ -1,6 +1,7 @@
 import { BrushContext, Point } from '../models';
+import { Brush } from './brush';
 
-export class Pen {
+export class Pen implements Brush {
 
   private ctx: CanvasRenderingContext2D;
 

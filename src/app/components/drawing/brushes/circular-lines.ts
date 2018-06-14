@@ -1,7 +1,8 @@
 import { BrushContext, Point } from '../models';
 import { getColor, hex2rgb, averageColor, rgb2string } from '../utils';
+import { Brush } from './brush';
 
-export class CircularFill {
+export class CircularLines implements Brush {
 
   private ctx: CanvasRenderingContext2D;
   previous: Point;

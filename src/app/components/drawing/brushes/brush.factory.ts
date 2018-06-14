@@ -1,16 +1,17 @@
 import { BrushType, BrushContext } from '../models';
-import { Brush } from './brush';
+import { Marker } from './marker';
 import { Pen } from './pen';
-import { CircularFill } from './circular-fill';
+import { CircularLines } from './circular-lines';
+import { Brush } from './brush';
 
-export function brushFactory(type: BrushType, context: BrushContext) {
+export function brushFactory(type: BrushType, context: BrushContext): Brush {
   switch (type) {
-    case BrushType.brush:
-      return new Brush(context);
+    case BrushType.marker:
+      return new Marker(context);
     case BrushType.pen:
       return new Pen(context);
     case BrushType.circular:
-      return new CircularFill(context);
+      return new CircularLines(context);
     default:
       throw new Error(`No such brush there ${type}`);
   }
