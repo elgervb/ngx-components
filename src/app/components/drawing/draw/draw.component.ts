@@ -1,10 +1,7 @@
-import { Component, OnInit, OnChanges, Input, ViewChild, ElementRef } from '@angular/core';
-
-import { Pen, BrushType } from '../brushes';
-import { Brush } from '../brushes/brush';
-import { brushFactory } from '../brushes/brush.factory';
+import { Component, ElementRef, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
+import { brushFactory, Brush } from '../brushes';
+import { BrushType } from '../models';
 import { getMousePosition } from '../utils';
-import { CircularFill } from '../brushes/circular-fill';
 
 @Component({
   selector: 'evb-draw',
@@ -22,7 +19,7 @@ export class DrawComponent implements OnInit, OnChanges {
   @Input() brushType: BrushType;
 
   @ViewChild('canvas') private canvasEl: ElementRef;
-  private brush: Pen | Brush | CircularFill;
+  private brush: Brush;
 
   private isDrawing = false;
   private ctx: CanvasRenderingContext2D;
