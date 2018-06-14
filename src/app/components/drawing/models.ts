@@ -13,7 +13,8 @@ export interface Point {
 
 export enum BrushType {
   pen = 'pen',
-  brush = 'brush'
+  brush = 'brush',
+  circular = 'circular'
 }
 
 export interface Rgb {
