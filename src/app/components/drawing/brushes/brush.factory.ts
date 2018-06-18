@@ -3,6 +3,7 @@ import { Marker } from './marker';
 import { Pen } from './pen';
 import { CircularLines } from './circular-lines';
 import { Brush } from './brush';
+import { SprayBrush } from './spray';
 
 export function brushFactory(type: BrushType, context: BrushContext): Brush {
   switch (type) {
@@ -12,6 +13,8 @@ export function brushFactory(type: BrushType, context: BrushContext): Brush {
       return new Pen(context);
     case BrushType.circular:
       return new CircularLines(context);
+    case BrushType.spray:
+      return new SprayBrush(context);
     default:
       throw new Error(`No such brush there ${type}`);
   }

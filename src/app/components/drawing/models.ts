@@ -14,7 +14,8 @@ export interface Point {
 export enum BrushType {
   pen = 'pen',
   marker = 'marker',
-  circular = 'circular'
+  circular = 'circular',
+  spray = 'spray'
 }
 
 export interface Rgb {
