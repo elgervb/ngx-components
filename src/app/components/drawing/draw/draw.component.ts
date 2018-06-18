@@ -62,18 +62,14 @@ export class DrawComponent implements OnInit, OnChanges {
   }
 
   setBrush(type: BrushType) {
-    this.brush = brushFactory(type, {
-      canvas: this.canvasEl.nativeElement,
-      color: this.color,
-      lineWidth: this.lineWidth
-    });
+    this.brush = brushFactory(type, this.createContext());
   }
 
   private createContext() {
     return {
       canvas: this.canvasEl.nativeElement,
       color: this.color,
-      lineWidth: this.lineWidth
+      lineWidth: +this.lineWidth
     };
   }
 }
