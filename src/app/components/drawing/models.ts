@@ -15,7 +15,8 @@ export enum BrushType {
   pen = 'pen',
   marker = 'marker',
   circular = 'circular',
-  spray = 'spray'
+  spray = 'spray',
+  multipleLines = 'multipleLines'
 }
 
 export interface Rgb {
