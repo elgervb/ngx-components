@@ -9,7 +9,11 @@ const MAX_RANDOM = 999999;
     <label [for]="id" *ngIf="label"> {{label}} </label>
     <ng-content></ng-content>
   `,
-  styleUrls: ['./formcontrol.component.scss']
+  styleUrls: [
+    './formcontrol.component.scss',
+    './formcontrol.component.color.scss',
+    './formcontrol.component.range.scss'
+  ]
 })
 export class FormControlComponent implements OnInit, AfterContentInit {
 

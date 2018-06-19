@@ -1,0 +1,10 @@
+@import 'src/app/components/variables.scss';
+
+:host ::ng-deep input[type=color] {
+  height: 2em;
+  padding: 0;
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+}
