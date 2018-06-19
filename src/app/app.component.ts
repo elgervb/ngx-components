@@ -1,9 +1,10 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { filter } from './components/list';
-import { WizardComponent } from './components/wizard/wizard/wizard.component';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { DonutModel } from './components/charts';
 import { BrushType } from './components/drawing';
 import { DrawComponent } from './components/drawing/draw/draw.component';
+import { filter } from './components/list';
+import { WizardComponent } from './components/wizard/wizard/wizard.component';
 
 @Component({
   selector: 'evb-root',
@@ -34,12 +35,12 @@ export class AppComponent implements OnInit {
 
   filteredItems: ListItem[] = this.listItemsObj;
 
-  donut = {
-    thickness: 10,
+  donut: DonutModel = {
+    thickness: 30,
     progress: 40,
     diameter: 240,
     invertDirection: false,
-    showText: false
+    showText: true
   };
 
   progressbar = {

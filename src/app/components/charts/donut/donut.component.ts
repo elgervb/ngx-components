@@ -4,6 +4,18 @@ const MIN_DIAMETER = 16;
 const PADDING = 64;
 const MAX_PERCENTAGE = 100;
 
+
+export interface DonutModel {
+  progress: number;
+  /** Invert the direction of the progress bar. Default to false (right) */
+  invertDirection: boolean;
+  /** The diameter in pixels of the component. Defaults to 120px */
+  diameter: number;
+  /** The thickness in pixels of the progress bar. Defaults to 12px */
+  thickness: number;
+  /** Whether or not to show progress percentage as text. Defaults to false */
+  showText: boolean;
+}
 /**
  * Donut chart. Basically a circle diagram with a hole in it...
  */
@@ -32,16 +44,11 @@ const MAX_PERCENTAGE = 100;
   `,
   styleUrls: ['donut.component.scss']
 })
-export class DonutComponent implements OnInit, OnChanges {
-  /** Progress in percentage */
+export class DonutComponent implements OnInit, OnChanges, DonutModel {
   @Input() progress = 0;
-  /** Invert the direction of the progress bar. Default to false (right) */
   @Input() invertDirection = false;
-  /** The diameter in pixels of the component. Defaults to 120px */
   @Input() diameter = 120;
-  /** The thickness in pixels of the progress bar. Defaults to 12px */
   @Input() thickness = 12;
-  /** Whether or not to show progress percentage as text. Defaults to false */
   @Input() showText = false;
 
   /**
