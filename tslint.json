@@ -232,33 +232,37 @@
       "check-separator",
       "check-type"
     ],
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "no-output-on-prefix": true,
-    "use-life-cycle-interface": true,
-    "no-output-named-after-standard-event": true,
-    "use-pipe-transform-interface": true,
-    "use-pipe-decorator": true,
+    "angular-whitespace": [
+      false,
+      "check-interpolation",
+      "check-pipe",
+      "check-semicolon"
+    ],
+    "banana-in-box": true,
     "component-class-suffix": true,
+    "contextual-life-cycle": true,
+    "decorator-not-allowed": true,
     "directive-class-suffix": true,
-    "no-unused-css": true,
-    "no-attribute-parameter-decorator": true,
-    "templates-no-negated-async": true,
-    "trackBy-function": false,
     "i18n": [
       true,
       "check-id"
     ],
     "import-destructuring-spacing": true,
-    "angular-whitespace": [
-      true,
-      "check-interpolation",
-      "check-pipe",
-      "check-semicolon"
-    ],
+    "no-attribute-parameter-decorator": true,
+    "no-input-rename": true,
+    "no-output-on-prefix": true,
+    "no-output-named-after-standard-event": true,
+    "no-output-rename": true,
+    "no-unused-css": true,
+    "pipe-impure": true,
+    "templates-no-negated-async": true,
+    "trackBy-function": false,
+    "use-input-property-decorator": true,
+    "use-host-property-decorator": true,
+    "use-life-cycle-interface": true,
+    "use-output-property-decorator": true,
+    "use-pipe-decorator": true,
+    "use-pipe-transform-interface": true,
     "use-view-encapsulation": true
   }
 }
