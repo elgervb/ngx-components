@@ -34,6 +34,7 @@ export class Marker implements Brush {
     this.ctx.lineJoin = this.ctx.lineCap = 'round';
     this.ctx.strokeStyle = this.context.color;
     this.ctx.fillStyle = this.context.color;
+    this.ctx.globalAlpha = this.context.globalAlpha;
 
     this.lastPoint = from;
   }

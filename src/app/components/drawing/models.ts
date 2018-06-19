@@ -2,6 +2,7 @@ export interface BrushContext {
   canvas: HTMLCanvasElement;
   lineWidth: number;
   color: string;
+  globalAlpha: number;
   // tslint:disable-next-line no-any
   data?: any;
 }

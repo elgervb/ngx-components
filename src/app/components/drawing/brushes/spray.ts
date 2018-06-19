@@ -32,6 +32,7 @@ export class SprayBrush implements Brush {
   down(from: Point) {
     this.ctx.lineWidth = this.context.lineWidth;
     this.ctx.fillStyle = this.context.color;
+    this.ctx.globalAlpha = this.context.globalAlpha;
     this.ctx.lineJoin = this.ctx.lineCap = 'round';
     this.position = from;
 

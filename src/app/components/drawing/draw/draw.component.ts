@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { brushFactory, Brush } from '../brushes';
-import { BrushType } from '../models';
+import { BrushType, BrushContext } from '../models';
 import { getMousePosition } from '../utils';
 
 @Component({
@@ -16,6 +16,7 @@ export class DrawComponent implements OnInit, OnChanges {
   @Input() height = 500;
   @Input() lineWidth = 1;
   @Input() color = '#000';
+  @Input() globalAlpha: number;
   @Input() brushType: BrushType;
 
   @ViewChild('canvas') private canvasEl: ElementRef;
@@ -65,11 +66,12 @@ export class DrawComponent implements OnInit, OnChanges {
     this.brush = brushFactory(type, this.createContext());
   }
 
-  private createContext() {
+  private createContext(): BrushContext {
     return {
       canvas: this.canvasEl.nativeElement,
       color: this.color,
-      lineWidth: +this.lineWidth
+      lineWidth: +this.lineWidth,
+      globalAlpha: +this.globalAlpha
     };
   }
 }

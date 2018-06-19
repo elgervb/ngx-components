@@ -21,7 +21,7 @@ export class Pen implements Brush {
   down(from: Point) {
     this.ctx.lineWidth = this.context.lineWidth;
     this.ctx.lineJoin = this.ctx.lineCap = 'round';
-
+    this.ctx.globalAlpha = this.context.globalAlpha;
     this.ctx.strokeStyle = this.context.color;
 
     this.ctx.beginPath();

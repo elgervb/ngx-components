@@ -25,6 +25,7 @@ export class MultipleLines implements Brush {
     this.ctx.lineWidth = this.context.lineWidth;
     this.ctx.lineJoin = this.ctx.lineCap = 'round';
     this.ctx.strokeStyle = this.context.color;
+    this.ctx.globalAlpha = this.context.globalAlpha;
   }
 
   move(to: Point) {

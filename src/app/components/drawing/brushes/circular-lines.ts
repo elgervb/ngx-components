@@ -26,6 +26,7 @@ export class CircularLines implements Brush {
 
   move(to: Point) {
     this.ctx.lineWidth = this.context.lineWidth;
+    this.ctx.globalAlpha = this.context.globalAlpha;
     if (this.context.data && this.context.data.average) {
       const colByCoords = getColor(this.ctx, to.x, to.y);
       const rgb = averageColor(colByCoords, hex2rgb(this.context.color));
