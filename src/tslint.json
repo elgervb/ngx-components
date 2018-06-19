@@ -12,6 +12,11 @@
       "element",
       "evb",
       "kebab-case"
+    ],
+    "pipe-naming": [
+      true,
+      "camelCase",
+      "evb"
     ]
   }
 }
