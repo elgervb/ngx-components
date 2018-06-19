@@ -1,3 +1,7 @@
+.wizard__menu {
+  border-bottom: 1px solid #51c87b;
+  counter-reset: wizard-step;
+}
 .wizard__menu-list {
   display: flex;
   list-style: none;
@@ -8,11 +12,19 @@
   background-color: #51c87b;
   color: #fff;
 }
+.wizard__menu-item--selected:not(:last-child) {
+  clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
+}
 .wizard__menu-link {
   cursor: pointer;
   display: block;
   height: 100%;
   padding: .5rem 1rem;
+
+  &:before{
+    counter-increment: wizard-step;
+    content: counter(wizard-step) '. ';
+  }
 }
 .wizard__menu-link--disabled {
   cursor: default;
@@ -29,6 +41,6 @@
   justify-content: space-between;
 
   .wizard__menu-item {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
   }
 }
