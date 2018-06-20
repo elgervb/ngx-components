@@ -2,20 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { ModalService } from './services/modal.service';
-import { AlertComponent } from './components';
+import { ModalComponent } from './components';
+import { BackdropComponent } from './components/backdrop/backdrop.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    AlertComponent
+    ModalComponent,
+    BackdropComponent,
+    TestComponent
   ],
   entryComponents: [
-    AlertComponent
+    ModalComponent,
+    TestComponent
   ],
   exports: [
-    AlertComponent
+    ModalComponent
   ]
 })
 export class ModalModule {

@@ -3,6 +3,15 @@
 <evb-container root="true" dir="col">
 
   <section>
+    <h2>modal</h2>
+
+    <evb-button (click)="openModal()">open modal</evb-button>
+    <evb-button (click)="closeModal()">close modal</evb-button>
+
+  </section>
+
+
+  <section>
     <h2>drawing</h2>
 
     <evb-draw #draw height="500" width="800" [lineWidth]="width.value" [color]="color.value" [globalAlpha]="globalAlpha.value" ></evb-draw><br />
