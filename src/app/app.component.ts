@@ -1,9 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DonutModel } from './components/charts';
 import { BrushType } from './components/drawing';
 import { DrawComponent } from './components/drawing/draw/draw.component';
 import { filter } from './components/list';
+import { AlertComponent } from './components/modal/components';
+import { ModalService } from './components/modal/services/modal.service';
 import { WizardComponent } from './components/wizard/wizard/wizard.component';
 
 @Component({
@@ -52,7 +55,7 @@ export class AppComponent implements OnInit {
 
   brushType = BrushType;
 
-  constructor(private builder: FormBuilder) { }
+  constructor(private builder: FormBuilder, private modal: ModalService, private container: ViewContainerRef) { }
 
   ngOnInit() {
     this.form = this.builder.group({
@@ -60,6 +63,8 @@ export class AppComponent implements OnInit {
       test2: [''],
       test3: ['']
     });
+
+    this.modal.open(AlertComponent, this.container);
   }
 
   handleClick(arg: string) {

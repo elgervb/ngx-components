@@ -12,6 +12,7 @@ import { ProgressbarModule } from './progressbar';
 import { WizardModule } from './wizard';
 import { FormModule } from './form/form.module';
 import { DrawingModule } from './drawing/drawing.module';
+import { ModalModule } from './modal/modal.module';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { DrawingModule } from './drawing/drawing.module';
     FlyoutModule.forRoot(),
     FormModule.forRoot(),
     ListModule.forRoot(),
+    ModalModule.forFeature(),
     ProgressbarModule.forRoot(),
     WizardModule.forRoot()
   ],
@@ -39,6 +41,7 @@ import { DrawingModule } from './drawing/drawing.module';
     FlyoutModule,
     FormModule,
     ListModule,
+    ModalModule,
     ProgressbarModule,
     WizardModule
   ]
