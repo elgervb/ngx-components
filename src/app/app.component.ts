@@ -1,12 +1,13 @@
-import { Component, ViewChild, OnInit, ComponentRef } from '@angular/core';
-import { filter } from './components/list';
-import { WizardComponent } from './components/wizard/wizard/wizard.component';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { DonutModel } from './components/charts';
 import { BrushType } from './components/drawing';
 import { DrawComponent } from './components/drawing/draw/draw.component';
+import { filter } from './components/list';
+import { AlertComponent, ModalComponent } from './components/modal/components';
 import { ModalService } from './components/modal/services/modal.service';
-import { ModalComponent } from './components/modal/components';
 import { TestComponent } from './components/modal/test/test.component';
+import { WizardComponent } from './components/wizard/wizard/wizard.component';
 
 @Component({
   selector: 'evb-root',
@@ -54,9 +55,7 @@ export class AppComponent implements OnInit {
 
   brushType = BrushType;
 
-  private modal: ComponentRef<ModalComponent>;
-
-  constructor(private builder: FormBuilder, private modalService: ModalService) { }
+  constructor(private builder: FormBuilder, private modal: ModalService, private container: ViewContainerRef) { }
 
   ngOnInit() {
     this.form = this.builder.group({
@@ -64,6 +63,8 @@ export class AppComponent implements OnInit {
       test2: [''],
       test3: ['']
     });
+
+    this.modal.open(AlertComponent, this.container);
   }
 
   handleClick(arg: string) {
