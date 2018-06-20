@@ -2,20 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { ModalService } from './services/modal.service';
-<<<<<<< HEAD
 import { ModalComponent } from './components';
 import { BackdropComponent } from './components/backdrop/backdrop.component';
 import { TestComponent } from './test/test.component';
-=======
 import { AlertComponent } from './components';
->>>>>>> modal: initual version of modal service
+import { ModalComponent } from './components';
+import { BackdropComponent } from './components/backdrop/backdrop.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-<<<<<<< HEAD
     ModalComponent,
     BackdropComponent,
     TestComponent
@@ -25,16 +24,10 @@ import { AlertComponent } from './components';
     TestComponent
   ],
   exports: [
-    ModalComponent
-=======
     AlertComponent
-  ],
-  entryComponents: [
-    AlertComponent
-  ],
-  exports: [
-    AlertComponent
->>>>>>> modal: initual version of modal service
+    ModalComponent,
+    BackdropComponent,
+    TestComponent
   ]
 })
 export class ModalModule {
