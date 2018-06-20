@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit, ContentChild, HostListener } from '@angular/core';
+import { Component, OnInit, AfterContentInit, ContentChild, HostListener, OnDestroy } from '@angular/core';
 import { FlyoutHeaderComponent } from '../flyout-header/flyout-header.component';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 import { Observable, Subject } from 'rxjs';
@@ -26,7 +26,7 @@ const animationDuration = 250;
   ],
   styleUrls: ['./flyout.component.scss']
 })
-export class FlyoutComponent implements OnInit, AfterContentInit {
+export class FlyoutComponent implements OnInit, OnDestroy, AfterContentInit {
 
   @ContentChild(FlyoutHeaderComponent) header?: FlyoutHeaderComponent;
 
@@ -48,6 +48,10 @@ export class FlyoutComponent implements OnInit, AfterContentInit {
 
   ngOnInit() {
     //
+  }
+
+  ngOnDestroy() {
+    this.result.complete();
   }
 
   ngAfterContentInit() {

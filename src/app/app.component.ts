@@ -21,13 +21,16 @@ export class AppComponent implements OnInit {
     {
       name: 'item 1',
       data: 'asdf'
-    }, {
+    },
+    {
       name: 'item 2',
       data: 'asdf'
-    }, {
+    },
+    {
       name: 'item 3',
       data: 'qwer'
-    }, {
+    },
+    {
       name: 'item 4',
       data: 'qwer'
     }

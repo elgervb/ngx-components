@@ -7,27 +7,28 @@
 
     <evb-draw #draw height="500" width="800" [lineWidth]="width.value" [color]="color.value" [globalAlpha]="globalAlpha.value" ></evb-draw><br />
 
-    <evb-formcontrol label="Color">
-      <input type="color" #color value="#000000" placeholder="Pick a color" />
-    </evb-formcontrol>
-    <evb-formcontrol label="Line width">
-      <input type="number" #width value="4" placeholder="Pick a width" />
-    </evb-formcontrol>
-    <evb-formcontrol label="Opacity">
-      <input type="range" #globalAlpha min="0.0" max="1.0" step="0.1" value="1.0" placeholder="Opacity" />
-    </evb-formcontrol>
-
-    <hr>
-
-    <evb-button (click)="setBrushType(brushType.pen)">pen</evb-button>
-    <evb-button (click)="setBrushType(brushType.marker)">marker</evb-button>
-    <evb-button (click)="setBrushType(brushType.circular)">circular</evb-button>
-    <evb-button (click)="setBrushType(brushType.spray)">spray</evb-button>
-    <evb-button (click)="setBrushType(brushType.multipleLines)">lines</evb-button>
-
-    <hr>
-
-    <evb-button (click)="draw.clear()">clear</evb-button>
+    <evb-container>
+      <div>
+        <evb-formcontrol label="Color">
+          <input type="color" #color value="#51c87b" placeholder="Pick a color" />
+        </evb-formcontrol>
+        <evb-formcontrol label="Line width">
+          <input type="number" #width value="4"  min="1" max="255" placeholder="Pick a width" />
+        </evb-formcontrol>
+        <evb-formcontrol label="Opacity">
+          <input type="range" #globalAlpha min="0.0" max="1.0" step="0.1" value="1.0" placeholder="Opacity" />
+        </evb-formcontrol>
+      </div>
+      <div>
+        <evb-button (click)="setBrushType(brushType.pen)">pen</evb-button>
+        <evb-button (click)="setBrushType(brushType.marker)">marker</evb-button>
+        <evb-button (click)="setBrushType(brushType.circular)">circular</evb-button>
+        <evb-button (click)="setBrushType(brushType.spray)">spray</evb-button>
+        <evb-button (click)="setBrushType(brushType.multipleLines)">lines</evb-button>
+        <hr>
+        <evb-button (click)="draw.clear()">clear</evb-button>
+      </div>
+    </evb-container>
 
   </section>
 
