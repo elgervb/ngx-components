@@ -1,12 +1,13 @@
-import { Component, ViewChild, OnInit, ComponentRef } from '@angular/core';
-import { filter } from './components/list';
-import { WizardComponent } from './components/wizard/wizard/wizard.component';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { Component, ComponentRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { DonutModel } from './components/charts';
 import { BrushType } from './components/drawing';
 import { DrawComponent } from './components/drawing/draw/draw.component';
-import { ModalService } from './components/modal/services/modal.service';
+import { filter } from './components/list';
 import { ModalComponent } from './components/modal/components';
+import { ModalService } from './components/modal/services/modal.service';
 import { TestComponent } from './components/modal/test/test.component';
+import { WizardComponent } from './components/wizard/wizard/wizard.component';
 
 @Component({
   selector: 'evb-root',
