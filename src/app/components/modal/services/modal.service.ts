@@ -16,18 +16,18 @@ export class ModalService {
   open<T>(componentClass: Type<T>, viewContainer?: ViewContainerRef): ComponentRef<T> {
     const injector = viewContainer ? viewContainer.parentInjector : this.injector;
 
-    const component = this.createComponent(componentClass, injector);
+    const modal = this.createComponent(componentClass, injector);
 
-    this.appRef.attachView(component.hostView);
+    this.appRef.attachView(modal.hostView);
 
     // check if we know on which viewContainer to attach
     if (viewContainer) {
-      this.attachToDom(viewContainer, component);
+      this.attachToDom(viewContainer, modal);
     } else {
-      this.attachToBody(component);
+      this.attachToBody(modal);
     }
 
-    return component;
+    return modal;
   }
 
   close<T>(component: ComponentRef<T>) {

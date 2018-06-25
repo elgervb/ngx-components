@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild, ComponentFactoryResolver, Type, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver, Type, ViewContainerRef, HostListener, ComponentRef } from '@angular/core';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'evb-modal',
   template: `
     <evb-backdrop (click)="close()"></evb-backdrop>
-    <aside>
+    <aside class="modal">
       <ng-template #contentHost></ng-template>
     </aside>
   `,
@@ -15,7 +16,15 @@ export class ModalComponent implements OnInit {
   // tslint:disable-next-line no-any
   @ViewChild('contentHost', { read: ViewContainerRef }) contentHost: ViewContainerRef;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
+  // tslint:disable-next-line no-any
+  componentRef: ComponentRef<any>;
+
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private modalService: ModalService) { }
+
+  @HostListener('document:keydown.escape', ['$event'])
+  onKeydownHandler() {
+    this.close();
+  }
 
   ngOnInit() {
     //
@@ -32,10 +41,10 @@ export class ModalComponent implements OnInit {
   }
 
   close() {
-
+    this.modalService.close(this.componentRef);
   }
 
   dismiss() {
-
+    this.modalService.close(this.componentRef);
   }
 }
