@@ -88,9 +88,9 @@ export class AppComponent implements OnInit {
   }
 
   openModal() {
-    this.modal = this.modalService.open(ModalComponent);
-    this.modal.instance.setComponent(TestComponent);
-    this.modal.instance.componentRef = this.modal;
+    this.modal = this.modalService.open(TestComponent);
+    // this.modal.instance.setComponent(TestComponent);
+    // this.modal.instance.componentRef = this.modal;
   }
 
   toggleProceed() {

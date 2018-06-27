@@ -9,6 +9,7 @@ import { AlertComponent } from './components';
 import { ModalComponent } from './components';
 import { BackdropComponent } from './components/backdrop/backdrop.component';
 import { TestComponent } from './test/test.component';
+import { ModalStackService } from './services/modal-stack.service';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ export class ModalModule {
     return {
       ngModule: ModalModule,
       providers: [
-        ModalService
+        ModalService,
+        ModalStackService
       ]
     };
   }
