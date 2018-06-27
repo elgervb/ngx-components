@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, ComponentFactoryResolver, Type, ViewContainerRef, HostListener, ComponentRef } from '@angular/core';
-import { ModalService } from '../../services/modal.service';
+import { Component, OnInit, ViewChild, ViewContainerRef, HostListener } from '@angular/core';
+import { ActiveModal } from '../../services/active.modal';
 
 @Component({
   selector: 'evb-modal',
@@ -16,10 +16,7 @@ export class ModalComponent implements OnInit {
   // tslint:disable-next-line no-any
   @ViewChild('contentHost', { read: ViewContainerRef }) contentHost: ViewContainerRef;
 
-  // tslint:disable-next-line no-any
-  componentRef: ComponentRef<any>;
-
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, private modalService: ModalService) { }
+  constructor(private activeModal: ActiveModal) { }
 
   @HostListener('document:keydown.escape', ['$event'])
   onKeydownHandler() {
@@ -30,21 +27,11 @@ export class ModalComponent implements OnInit {
     //
   }
 
-  // tslint:disable-next-line no-any
-  setComponent<T>(component: Type<T>): T {
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
-    this.contentHost.clear();
-
-    const componentRef = this.contentHost.createComponent(componentFactory);
-
-    return componentRef.instance;
-  }
-
   close() {
-    this.modalService.close(this.componentRef);
+    this.activeModal.close();
   }
 
   dismiss() {
-    this.modalService.close(this.componentRef);
+    this.activeModal.close();
   }
 }
