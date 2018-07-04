@@ -5,9 +5,11 @@ import { ActiveModal } from '../../services/active.modal';
   selector: 'evb-modal',
   template: `
     <evb-backdrop (click)="close()"></evb-backdrop>
-    <aside class="modal">
+    <div tabindex="0"></div>
+    <aside class="modal" role="dialog">
       <ng-template #contentHost></ng-template>
     </aside>
+    <div tabindex="0"></div>
   `,
   styleUrls: ['./modal.component.scss']
 })

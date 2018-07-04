@@ -35,7 +35,7 @@ export class ModalService {
     } else {
       this.attachToBody(modal);
     }
-
+    window.document.body.classList.add('modal_open');
 
     return modal;
   }
@@ -44,6 +44,8 @@ export class ModalService {
     if (modal) {
       this.appRef.detachView(modal.hostView);
       modal.destroy();
+
+      window.document.body.classList.remove('modal_open');
     }
   }
 

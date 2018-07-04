@@ -17,6 +17,14 @@ body {
 button {
   cursor: pointer;
 }
-::-webkit-input-placeholder {
+::placeholder {
   color: #999;
+}
+
+.modal_open {
+  overflow: hidden;
+
+  evb-root evb-container {
+    filter: blur(.25rem) grayscale(90%);
+  }
 }
