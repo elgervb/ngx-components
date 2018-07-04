@@ -45,15 +45,15 @@
     <h2>forms</h2>
     <form [formGroup]="form" (ngSubmit)="submit(form.value)">
       <evb-formcontrol label="Test 1">
-        <input type="text" formControlName="test1" autofocus />
+        <input type="text" formControlName="test1" placeholder="Test 1" autofocus />
       </evb-formcontrol>
 
       <evb-formcontrol label="Test 2">
-        <input type="number" formControlName="test2" required />
+        <input type="number" formControlName="test2" placeholder="Test 2" required />
       </evb-formcontrol>
 
       <evb-formcontrol label="Test 3">
-        <textarea formControlName="test3"></textarea>
+        <textarea formControlName="test3" placeholder="Test 3"></textarea>
       </evb-formcontrol>
 
       <evb-container>
