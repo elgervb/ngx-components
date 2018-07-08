@@ -1,13 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { NgModule } from '@angular/core';
+import { ModalComponent } from './components';
+import { BackdropComponent } from './components/backdrop/backdrop.component';
 import { ModalService } from './services/modal.service';
-import { ModalComponent } from './components';
-import { BackdropComponent } from './components/backdrop/backdrop.component';
-import { TestComponent } from './test/test.component';
-import { AlertComponent } from './components';
-import { ModalComponent } from './components';
-import { BackdropComponent } from './components/backdrop/backdrop.component';
 import { TestComponent } from './test/test.component';
 
 @NgModule({
@@ -24,7 +20,6 @@ import { TestComponent } from './test/test.component';
     TestComponent
   ],
   exports: [
-    AlertComponent
     ModalComponent,
     BackdropComponent,
     TestComponent
