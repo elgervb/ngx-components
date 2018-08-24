@@ -56,7 +56,7 @@ export class FlyoutComponent implements OnInit, OnDestroy, AfterContentInit {
 
   ngAfterContentInit() {
     if (this.header) {
-      this.header.close.subscribe(() => this.close());
+      this.header.triggerClose.subscribe(() => this.close());
     }
   }
 

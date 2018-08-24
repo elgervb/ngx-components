@@ -74,7 +74,10 @@ export class ModalService {
   }
 
   private createInjector(activeModal: ActiveModal, injector: Injector) {
-    const modalContentInjector = Injector.create([{ provide: ActiveModal, useValue: activeModal }], injector);
+    const modalContentInjector = Injector.create({
+      providers: [{ provide: ActiveModal, useValue: activeModal }],
+      parent: injector
+    });
     return modalContentInjector;
   }
 

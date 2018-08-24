@@ -17,6 +17,7 @@ export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
   @ContentChild(WizardFooterComponent) footer: WizardFooterComponent;
   @ContentChild(WizardHeaderComponent) header: WizardHeaderComponent;
 
+  // tslint:disable-next-line no-output-named-after-standard-event
   @Output() complete = new EventEmitter<void>();
 
   get currentStep(): WizardStepComponent {

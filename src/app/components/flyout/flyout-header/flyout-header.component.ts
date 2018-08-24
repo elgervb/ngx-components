@@ -12,7 +12,7 @@ export class FlyoutHeaderComponent implements OnInit {
 
   @Input() title?: string;
 
-  @Output() close = new EventEmitter<void>();
+  @Output() triggerClose = new EventEmitter<void>();
 
   constructor() { }
 
@@ -20,6 +20,6 @@ export class FlyoutHeaderComponent implements OnInit {
   }
 
   handleClose() {
-    this.close.emit();
+    this.triggerClose.emit();
   }
 }

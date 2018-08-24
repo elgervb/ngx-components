@@ -47,6 +47,7 @@ export class MultipleLines implements Brush {
     this.ctx.beginPath();
     this.ctx.moveTo(p1.x, p1.y);
 
+    // tslint:disable-next-line one-variable-per-declaration
     for (let i = 1, len = points.length; i < len; i++) {
       // we pick the point between pi+1 & pi+2 as the
       // end point and p1 as our control point

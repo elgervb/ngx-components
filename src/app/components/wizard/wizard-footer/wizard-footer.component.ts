@@ -15,6 +15,7 @@ export class WizardFooterComponent {
 
   @Output() next = new EventEmitter<void>();
   @Output() previous = new EventEmitter<void>();
+  // tslint:disable-next-line no-output-named-after-standard-event
   @Output() complete = new EventEmitter<void>();
 
   hasNext() {
