@@ -55,7 +55,6 @@ export class WizardFooterComponent {
   }
 
   sendComplete() {
-    debugger;
     this.complete.emit();
   }
 }

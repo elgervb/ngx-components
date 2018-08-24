@@ -194,17 +194,30 @@
     <h2>Progress bar</h2>
 
     <evb-progressbar [progress]="progressbar.progress"></evb-progressbar>
+    <evb-formcontrol>
     <input type="range" min="0" max="100" [(ngModel)]="progressbar.progress"> Progress: {{progressbar.progress}}%<br>
+    </evb-formcontrol>
     <evb-progressbar [progress]="progressbar.progress" [height]="32" [showText]="true"></evb-progressbar>
   </section>
 
   <section>
     <h2>Donut</h2>
-    <input type="range" min="1" max="{{donut.diameter / 2}}" [(ngModel)]="donut.thickness"> Thickness: {{donut.thickness}} <br>
-    <input type="range" min="0" max="100" [(ngModel)]="donut.progress"> Progress: {{donut.progress}}% <br>
-    <input type="range" min="10" max="1000" [(ngModel)]="donut.diameter"> Diameter: {{donut.diameter}}<br>
-    <input type="checkbox" id="invertDirection" [(ngModel)]="donut.invertDirection"><label for="invertDirection">Invert direction</label>
-    <input type="checkbox" id="showText" [(ngModel)]="donut.showText"><label for="showText">Show text</label>
+    <evb-formcontrol label="Thickness">
+      <input type="range" min="1" max="{{donut.diameter / 2}}" [(ngModel)]="donut.thickness">
+      <output>{{donut.thickness}}</output>
+    </evb-formcontrol>
+    <evb-formcontrol label="Progress">
+      <input type="range" min="0" max="100" [(ngModel)]="donut.progress">
+      <output>{{donut.progress}}%</output>
+    </evb-formcontrol>
+    <evb-formcontrol label="Diameter">
+      <input type="range" min="10" max="1000" [(ngModel)]="donut.diameter">
+      <output>{{donut.diameter}}</output>
+    </evb-formcontrol>
+    <evb-formcontrol>
+      <input type="checkbox" id="invertDirection" [(ngModel)]="donut.invertDirection"><label for="invertDirection">Invert direction</label>
+      <input type="checkbox" id="showText" [(ngModel)]="donut.showText"><label for="showText">Show text</label>
+    </evb-formcontrol>
     <hr>
 
     <evb-donut

@@ -3,85 +3,77 @@
 :host ::ng-deep input[type=range] {
   -webkit-appearance: none;
   border: none;
+  margin: 0;
   padding-left: 0;
   padding-right: 0;
 
   &::-webkit-slider-runnable-track {
-    width: 100%;
-    // stylelint-disable-next-line unit-blacklist
-    height: 12.8px;
+    background: $color-primary;
+    border: none;
+    border-radius: .25rem;
     cursor: pointer;
+    height: .1rem;
     transition-duration: .2s;
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
-    background: $color-primary;
-    border-radius: 25px;
-    border: 0 solid #000101;
+    width: 100%;
   }
+
   &::-webkit-slider-thumb {
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
-    border: 1px solid #fff;
-    height: 2em;
-    width: 2em;
-    border-radius: 50%;
     background: $color-primary;
+    border: 1px solid #fff;
+    border-radius: 50%;
     cursor: pointer;
+    height: 1rem;
     -webkit-appearance: none;
-    margin-top: -.6em;
+    margin-top: -.175em;
+    width: 1rem;
   }
 
   &::-moz-range-track {
-    width: 100%;
-    // stylelint-disable-next-line unit-blacklist
-    height: 12.8px;
+    background: $color-primary;
+    border: none;
     cursor: pointer;
+    height: .1rem;
     transition-duration: .2s;
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
-    background: #ac51b5;
     border-radius: 25px;
-    border: 0 solid #000101;
+    width: 100%;
   }
   &::-moz-range-thumb {
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
-    border: 0 solid #000;
-    height: 20;
-    // stylelint-disable-next-line unit-blacklist
-    width: 39px;
-    border-radius: 7px;
-    background: #65001c;
+    background: $color-primary;
+    border: 1px solid #fff;
+    border-radius: 50%;
     cursor: pointer;
+    height: 1rem;
+    width: 1rem;
   }
   &::-ms-track {
-    width: 100%;
-    // stylelint-disable-next-line unit-blacklist
-    height: 12.8px;
-    cursor: pointer;
-    transition-duration: .2s;
     background: transparent;
     border-color: transparent;
-    border-width: 39px 0;
+    border-width: 1px;
     color: transparent;
+    cursor: pointer;
+    height: .1rem;
+    padding: .5rem;
+    transition-duration: .2s;
+    width: 100%;
   }
   &::-ms-fill-lower {
-    background: #ac51b5;
+    background: $color-primary;
     border: 0 solid #000101;
     border-radius: 50;
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
   }
   &::-ms-fill-upper {
-    background: #ac51b5;
+    background: lighten($color-primary, 25%);
     border: 0 solid #000101;
     border-radius: 50;
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
   }
   &::-ms-thumb {
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
-    border: 0 solid #000;
-    height: 20;
-    // stylelint-disable-next-line unit-blacklist
-    width: 39px;
-    border-radius: 7px;
-    background: #65001c;
+    background: $color-primary;
+    border: 1px solid #fff;
+    border-radius: 50%;
     cursor: pointer;
+    height: 1rem;
+    margin-top: -.1375em;
+    width: 1rem;
   }
   &:focus {
     outline: none;
@@ -90,9 +82,13 @@
     background: darken($color-primary, 15%);
   }
   &:focus::-ms-fill-lower {
-    background: #ac51b5;
+    background: $color-primary;
   }
   &:focus::-ms-fill-upper {
-    background: #ac51b5;
+    background: $color-primary;
   }
+}
+
+:host ::ng-deep output {
+  margin-left: .5rem;
 }
