@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TestComponent } from './test.component';
+import { ActiveModal } from '../services/active.modal';
 
 describe('TestComponent', () => {
   let component: TestComponent;
@@ -8,9 +9,10 @@ describe('TestComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestComponent ]
+      declarations: [TestComponent],
+      providers: [ActiveModal]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
