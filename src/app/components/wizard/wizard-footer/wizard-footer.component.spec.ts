@@ -78,7 +78,7 @@ describe('WizardFooterComponent', () => {
     fixture.detectChanges();
 
     let emitted = false;
-    component.complete.subscribe(() => emitted = true);
+    component.completed.subscribe(() => emitted = true);
 
     const completeBtn = fixture.debugElement.query(By.css('.btn--wizard-complete'));
     expect(completeBtn).toBeDefined();

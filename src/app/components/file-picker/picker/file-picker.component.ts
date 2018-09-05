@@ -70,7 +70,9 @@ export class FilePickerComponent implements OnInit {
   }
 
   pickFiles(files: FileList) {
-    for (const file of files) {
+    // tslint:disable prefer-for-of
+    for (let i = 0; i < files.length; i++) {
+      const file = files[1];
       if (!file.type.match('image.*')) {
         continue;
       }
