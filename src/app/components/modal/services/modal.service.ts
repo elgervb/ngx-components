@@ -1,7 +1,9 @@
 import {
-  Injectable, ComponentFactoryResolver, Injector, Type, ViewContainerRef, ComponentRef, ApplicationRef, EmbeddedViewRef
+  ApplicationRef, ComponentFactoryResolver, ComponentRef, EmbeddedViewRef, Injectable, Injector, Type, ViewContainerRef
 } from '@angular/core';
+
 import { ModalComponent } from '../components/modal/modal.component';
+
 import { ActiveModal } from './active.modal';
 
 @Injectable({
@@ -26,7 +28,6 @@ export class ModalService {
 
     const component = this.createContentComponent(modal, componentClass, injector);
     this.attachToDom(modal.instance.contentHost, component);
-
 
     this.appRef.attachView(modal.hostView);
     // check if we know on which viewContainer to attach

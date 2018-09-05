@@ -7,6 +7,7 @@ import { DonutComponent } from './donut.component';
 const DIAMETER = 480;
 const PROGRESS = 20;
 
+// tslint:disable no-life-cycle-call
 describe('DonutComponent', () => {
   let component: DonutComponent;
   let fixture: ComponentFixture<DonutComponent>;

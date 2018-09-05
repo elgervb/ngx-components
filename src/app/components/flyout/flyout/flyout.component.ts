@@ -1,7 +1,8 @@
-import { Component, OnInit, AfterContentInit, ContentChild, HostListener, OnDestroy } from '@angular/core';
-import { FlyoutHeaderComponent } from '../flyout-header/flyout-header.component';
-import { trigger, transition, style, animate, state } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { AfterContentInit, Component, ContentChild, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+
+import { FlyoutHeaderComponent } from '../flyout-header/flyout-header.component';
 
 const animationDuration = 250;
 

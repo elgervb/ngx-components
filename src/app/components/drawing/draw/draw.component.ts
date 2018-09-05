@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
-import { brushFactory, Brush } from '../brushes';
-import { BrushType, BrushContext } from '../models';
+
+import { Brush, brushFactory } from '../brushes';
+import { BrushContext, BrushType } from '../models';
 import { getMousePosition } from '../utils';
 
 @Component({

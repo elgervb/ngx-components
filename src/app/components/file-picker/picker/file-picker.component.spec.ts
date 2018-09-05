@@ -1,8 +1,10 @@
 
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { FilePickerComponent } from './file-picker.component';
-import { ProgressbarModule } from '../../progressbar';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { ButtonModule } from '../../button';
+import { ProgressbarModule } from '../../progressbar';
+
+import { FilePickerComponent } from './file-picker.component';
 
 describe('FilePickerComponent', () => {
   let component: FilePickerComponent;

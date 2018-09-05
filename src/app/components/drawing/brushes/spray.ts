@@ -1,6 +1,7 @@
-import { Point, BrushContext } from '../models';
-import { Brush } from './brush';
+import { BrushContext, Point } from '../models';
 import { getRandomFloat } from '../utils';
+
+import { Brush } from './brush';
 
 const DEFAULT_DENSITY = 50;
 const RENDER_TIMEOUT = 50;
@@ -59,4 +60,3 @@ export class SprayBrush implements Brush {
     this.timeout = setTimeout(() => this.draw(), RENDER_TIMEOUT);
   }
 }
-

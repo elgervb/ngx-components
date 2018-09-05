@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
+
+import { ButtonModule } from '../button/button.module';
+
 import { WizardFooterComponent } from './wizard-footer/wizard-footer.component';
 import { WizardHeaderComponent } from './wizard-header/wizard-header.component';
 import { WizardStepComponent } from './wizard-step/wizard-step.component';
 import { WizardComponent } from './wizard/wizard.component';
-import { ButtonModule } from '../button/button.module';
 
 @NgModule({
   imports: [

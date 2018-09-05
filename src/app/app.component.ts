@@ -1,5 +1,6 @@
 import { Component, ComponentRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+
 import { DonutModel } from './components/charts';
 import { BrushType } from './components/drawing';
 import { DrawComponent } from './components/drawing/draw/draw.component';
@@ -79,7 +80,7 @@ export class AppComponent implements OnInit {
     this.form.reset();
   }
 
-  submit(value: { test1: string, test2: string }) {
+  submit(value: { test1: string; test2: string }) {
     console.log('Form submitted', value);
   }
 

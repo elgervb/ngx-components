@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterContentInit, ElementRef } from '@angular/core';
+import { AfterContentInit, Component, ElementRef, Input, OnInit } from '@angular/core';
 
 const MIN_RANDOM = 100000;
 const MAX_RANDOM = 999999;
@@ -20,8 +20,8 @@ export class FormControlComponent implements OnInit, AfterContentInit {
   @Input() label?: string;
 
   /**
-  * Random id to couple the label and the input together
-  */
+   * Random id to couple the label and the input together
+   */
   id?: string;
 
   constructor(private hostElement: ElementRef) { }

@@ -1,4 +1,5 @@
 import { BrushContext, Point } from '../models';
+
 import { Brush } from './brush';
 
 const LINE_OFFSET = 4;
@@ -64,7 +65,6 @@ export class MultipleLines implements Brush {
   }
 }
 
-
 function midPointBtw(p1: Point, p2: Point): Point {
   return {
     x: p1.x + (p2.x - p1.x) / 2,
@@ -74,10 +74,10 @@ function midPointBtw(p1: Point, p2: Point): Point {
 
 function offsetPoints(offset: number, points: Point[]): Point[] {
   const offsets = [];
-  for (let i = 0; i < points.length; i++) {
+  for (const point of points) {
     offsets.push({
-      x: points[i].x + offset,
-      y: points[i].y + offset
+      x: point.x + offset,
+      y: point.y + offset
     });
   }
   return offsets;

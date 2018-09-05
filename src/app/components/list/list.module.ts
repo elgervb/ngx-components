@@ -1,8 +1,9 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListComponent } from './list/list.component';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+
 import { ListFilterComponent } from './list-filter/list-filter.component';
 import { ListItemComponent } from './list-item/list-item.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   imports: [

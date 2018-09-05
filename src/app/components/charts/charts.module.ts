@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DonutComponent } from './donut/donut.component';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { NgModule } from '@angular/core';
+
+import { DonutComponent } from './donut/donut.component';
 
 @NgModule({
   imports: [

@@ -1,8 +1,10 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FilePickerComponent } from './picker/file-picker.component';
-import { ProgressbarModule } from '../progressbar/progressbar.module';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+
 import { ButtonModule } from '../button';
+import { ProgressbarModule } from '../progressbar/progressbar.module';
+
+import { FilePickerComponent } from './picker/file-picker.component';
 
 @NgModule({
   imports: [

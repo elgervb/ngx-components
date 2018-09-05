@@ -1,19 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
+
 import { ButtonModule } from './button';
 import { CardModule } from './card/card.module';
 import { ChartsModule } from './charts/charts.module';
 import { ContainerComponent } from './container';
 import { ContainerModule } from './container/container.module';
+import { DrawingModule } from './drawing/drawing.module';
 import { FilePickerModule } from './file-picker';
 import { FlyoutModule } from './flyout/flyout.module';
-import { ListModule } from './list/list.module';
-import { ProgressbarModule } from './progressbar';
-import { WizardModule } from './wizard';
 import { FormModule } from './form/form.module';
-import { DrawingModule } from './drawing/drawing.module';
+import { ListModule } from './list/list.module';
 import { ModalModule } from './modal/modal.module';
+import { ProgressbarModule } from './progressbar';
 import { SpinnerModule } from './spinner/spinner.module';
+import { WizardModule } from './wizard';
 
 @NgModule({
   imports: [

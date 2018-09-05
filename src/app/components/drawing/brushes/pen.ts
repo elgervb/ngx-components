@@ -1,4 +1,5 @@
 import { BrushContext, Point } from '../models';
+
 import { Brush } from './brush';
 
 export class Pen implements Brush {

@@ -4,7 +4,6 @@ const MIN_DIAMETER = 16;
 const PADDING = 64;
 const MAX_PERCENTAGE = 100;
 
-
 export interface DonutModel {
   progress: number;
   /** Invert the direction of the progress bar. Default to false (right) */
@@ -90,16 +89,14 @@ export class DonutComponent implements OnInit, OnChanges, DonutModel {
 
       if (this.showText) {
         this.hostProgress = this.progress;
-        this.hostFontSize = Math.max(MIN_DIAMETER, (this.diameter - PADDING - (2 * this.thickness)) / 2);
+        this.hostFontSize = Math.max(MIN_DIAMETER, (this.diameter - PADDING - (this.thickness * 2)) / 2);
       }
     }
   }
 
   /**
-    * Calculate the progress and set styling properties accordingly
-    *
-    * @param value the progress value
-    */
+   * Calculate the progress and set styling properties accordingly
+   */
   private calculateProgress(value: number) {
     const progress = value / MAX_PERCENTAGE;
     const dashoffset = this.circumference * (1 - progress);

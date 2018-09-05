@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'evb-flyout-header',
@@ -12,7 +12,7 @@ export class FlyoutHeaderComponent implements OnInit {
 
   @Input() title?: string;
 
-  @Output() triggerClose = new EventEmitter<void>();
+  @Output() readonly triggerClose = new EventEmitter<void>();
 
   constructor() { }
 

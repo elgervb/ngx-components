@@ -35,11 +35,11 @@ export function rgb2string(rgb: Rgb) {
   return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a || 0})`;
 }
 export function hex2rgb(hex: string): Rgb {
-  let r;
   // long version
-  r = hex.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
+  let r = hex.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
   if (r) {
-    const rgb = r.slice(1, 4)
+    const rgbIndex = 4;
+    const rgb = r.slice(1, rgbIndex)
       .map(x => parseInt(x, 16));
 
     return {
@@ -53,7 +53,7 @@ export function hex2rgb(hex: string): Rgb {
   r = hex.match(/^#([0-9a-f])([0-9a-f])([0-9a-f])$/i);
   if (r) {
     // tslint:disable no-magic-numbers
-    const rgb = r.slice(1, 4).map(x => 0x11 * parseInt(x, 16));
+    const rgb = r.slice(1, 4).map(x => parseInt(x, 16) * 0x11);
     return {
       r: rgb[0],
       g: rgb[1],

@@ -8,5 +8,7 @@
     120
   ],
   "tslint.rulesDirectory": "./node_modules/codelyzer",
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "tslint.autoFixOnSave": true,
+  "tslint.packageManager": "yarn"
 }

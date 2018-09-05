@@ -1,9 +1,10 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlyoutComponent } from './flyout/flyout.component';
+
 import { FlyoutHeaderComponent } from './flyout-header/flyout-header.component';
 import { FlyoutToggleDirective } from './flyout-toggle/flyout-toggle.directive';
+import { FlyoutComponent } from './flyout/flyout.component';
 
 @NgModule({
   imports: [

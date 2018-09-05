@@ -1,7 +1,7 @@
-import { Point, BrushContext } from '../models';
-import { distanceBetween, angleBetween } from '../utils';
-import { Brush } from './brush';
+import { BrushContext, Point } from '../models';
+import { angleBetween, distanceBetween } from '../utils';
 
+import { Brush } from './brush';
 
 export class Marker implements Brush {
 
@@ -72,4 +72,3 @@ export class Marker implements Brush {
     return transformedImage;
   }
 }
-

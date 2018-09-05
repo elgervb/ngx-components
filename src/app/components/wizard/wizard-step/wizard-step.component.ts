@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding, QueryList, ContentChildren } from '@angular/core';
+import { Component, ContentChildren, HostBinding, Input, OnInit, QueryList } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({

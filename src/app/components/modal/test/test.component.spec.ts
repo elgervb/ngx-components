@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TestComponent } from './test.component';
 import { ActiveModal } from '../services/active.modal';
+
+import { TestComponent } from './test.component';
 
 describe('TestComponent', () => {
   let component: TestComponent;

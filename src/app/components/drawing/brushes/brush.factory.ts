@@ -1,10 +1,11 @@
-import { BrushType, BrushContext } from '../models';
-import { Marker } from './marker';
-import { Pen } from './pen';
-import { CircularLines } from './circular-lines';
+import { BrushContext, BrushType } from '../models';
+
 import { Brush } from './brush';
-import { SprayBrush } from './spray';
+import { CircularLines } from './circular-lines';
+import { Marker } from './marker';
 import { MultipleLines } from './multiple-lines';
+import { Pen } from './pen';
+import { SprayBrush } from './spray';
 
 export function brushFactory(type: BrushType, context: BrushContext): Brush {
   switch (type) {

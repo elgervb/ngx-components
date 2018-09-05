@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
@@ -18,7 +18,7 @@ export class ListFilterComponent implements OnInit {
   // tslint:disable-next-line no-any items can be of any type
   @Input() items: any[];
   @Input() placeholder = 'Filter...';
-  @Output() filter = new EventEmitter<string>();
+  @Output() readonly filter = new EventEmitter<string>();
 
   private filterSubject = new Subject<string>();
 

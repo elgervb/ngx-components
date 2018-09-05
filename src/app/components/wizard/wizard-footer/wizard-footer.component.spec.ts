@@ -1,8 +1,10 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { WizardFooterComponent } from './wizard-footer.component';
-import { ButtonModule } from '../../button';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+
 import { WizardStepComponent } from '..';
+import { ButtonModule } from '../../button';
+
+import { WizardFooterComponent } from './wizard-footer.component';
 
 describe('WizardFooterComponent', () => {
   let component: WizardFooterComponent;

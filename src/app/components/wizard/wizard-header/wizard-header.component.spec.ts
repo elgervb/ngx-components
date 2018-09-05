@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WizardHeaderComponent } from './wizard-header.component';
 import { WizardStepComponent } from '../wizard-step/wizard-step.component';
+
+import { WizardHeaderComponent } from './wizard-header.component';
 
 describe('WizardHeaderComponent', () => {
   let component: WizardHeaderComponent;

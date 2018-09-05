@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'evb-container',

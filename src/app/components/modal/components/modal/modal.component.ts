@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ViewContainerRef, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+
 import { ActiveModal } from '../../services/active.modal';
 
 @Component({

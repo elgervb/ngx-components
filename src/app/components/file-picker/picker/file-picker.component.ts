@@ -1,38 +1,12 @@
 import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
+
 import { UploadedFile } from '../file-picker.models';
+
 import { FileProgress } from './fileprogress';
 
 @Component({
   selector: 'evb-file-picker',
-  template: `
-    <div class="filepicker__picker">
-      <input #filePicker type="file" id="filePicker" (change)="onChange()" required [multiple]="multiple" class="form-control" />
-
-      <div class="filepicker__droparea">
-
-        <evb-progressbar [progress]="getProgress()"></evb-progressbar>
-
-        <p *ngIf="files?.length === 0" class="filepicker__dropmessage">Drop your files here!</p>
-
-        <ul *ngIf="files?.length > 0" class="filepicker__thumbs">
-          <li *ngFor="let file of files" class="filepicker__thumbs__placeholder">
-            <img [src]="file.content" alt="{{file.file.name}}" title="{{file.file.name}}" class="filepicker__thumb" />
-            <span class="filepicker__filename"> {{file.file.name}} </span>
-
-            <div class="filepicker__thumbs__delete" (click)="deleteFile(file)">
-              <div class="filepicker__thumbs__delete__text">&times;</div>
-            </div>
-          </li>
-        </ul>
-
-        <evb-button class="btn__upload">
-          <label for="filePicker">Add file<span *ngIf="multiple">s</span></label>
-        </evb-button>
-
-      </div>
-
-    </div>
-  `,
+  templateUrl: './file-picker.component.html',
   styleUrls: ['./file-picker.component.scss'],
 })
 export class FilePickerComponent implements OnInit {
@@ -44,7 +18,7 @@ export class FilePickerComponent implements OnInit {
   // TODO paste from clipboard
 
   @Input() multiple = false;
-  @Output() pick = new EventEmitter<UploadedFile>();
+  @Output() readonly pick = new EventEmitter<UploadedFile>();
 
   @ViewChild('filePicker') filePicker: ElementRef<HTMLInputElement>;
   @HostBinding('class.filepicker') cssClass = true;
@@ -96,9 +70,7 @@ export class FilePickerComponent implements OnInit {
   }
 
   pickFiles(files: FileList) {
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-
+    for (const file of files) {
       if (!file.type.match('image.*')) {
         continue;
       }

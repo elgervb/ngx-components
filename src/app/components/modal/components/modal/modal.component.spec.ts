@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ModalComponent } from './modal.component';
-import { BackdropComponent } from '../backdrop/backdrop.component';
-import { ModalService } from '../../services/modal.service';
-import { ActiveModal } from '../../services/active.modal';
 
+import { ActiveModal } from '../../services/active.modal';
+import { ModalService } from '../../services/modal.service';
+import { BackdropComponent } from '../backdrop/backdrop.component';
+
+import { ModalComponent } from './modal.component';
 
 describe('ModalComponent', () => {
   let component: ModalComponent;

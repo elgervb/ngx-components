@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 
 @Component({
@@ -10,7 +11,7 @@ export class WizardHeaderComponent implements OnInit {
 
   @Input() steps: WizardStepComponent[];
   @Input() align?: string;
-  @Output() selectionChange = new EventEmitter<WizardStepComponent>();
+  @Output() readonly selectionChange = new EventEmitter<WizardStepComponent>();
 
   get alignmentCss() {
     return this.align ? `align--${this.align}` : '';
