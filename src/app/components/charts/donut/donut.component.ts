@@ -30,14 +30,14 @@ export interface DonutModel {
       <circle class="progress__meter"
         [attr.cx]="diameter/2"
         [attr.cy]="diameter/2"
-        [attr.r]="diameter/2-thickness/2"
+        [attr.r]="x"
         [attr.stroke-width]="thickness" />
 
       <circle #progress class="progress__value"
         [class.arc-left]="invertDirection"
         [attr.cx]="diameter/2"
         [attr.cy]="diameter/2"
-        [attr.r]="diameter/2-thickness/2"
+        [attr.r]="x"
         [attr.stroke-width]="thickness" />
     </svg>
   `,
@@ -75,6 +75,10 @@ export class DonutComponent implements OnInit, OnChanges, DonutModel {
    */
   get viewbox() {
     return `0 0 ${this.diameter} ${this.diameter}`;
+  }
+
+  get x() {
+    return Math.max((this.diameter / 2 - this.thickness / 2), 0);
   }
 
   ngOnInit() {
