@@ -13,6 +13,9 @@
       "evb",
       "kebab-case"
     ],
-    "pipe-prefix": "evb"
+    "pipe-prefix": [
+      true,
+      "evb"
+    ]
   }
 }

@@ -1,5 +1,7 @@
+@import 'src/app/components/variables.scss';
+
 .wizard__menu {
-  border-bottom: 1px solid #51c87b;
+  border-bottom: 1px solid $color-primary;
   counter-reset: wizard-step;
 }
 .wizard__menu-list {
@@ -9,8 +11,8 @@
   padding: 0;
 }
 .wizard__menu-item--selected {
-  background-color: #51c87b;
-  color: #fff;
+  background-color: $color-primary;
+  color: $color-primary-contrast;
 }
 .wizard__menu-item--selected:not(:last-child) {
   clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
@@ -19,7 +21,7 @@
   cursor: pointer;
   display: block;
   height: 100%;
-  padding: .5rem 1rem;
+  padding: 1rem;
 
   &:before{
     counter-increment: wizard-step;
