@@ -1,11 +1,12 @@
 import {
-  Component, OnInit, Output, EventEmitter, OnDestroy, AfterContentInit, QueryList, ContentChildren, ContentChild
+  AfterContentInit, Component, ContentChild, ContentChildren, EventEmitter, OnDestroy, OnInit, Output, QueryList
 } from '@angular/core';
-import { WizardStepComponent } from '../wizard-step/wizard-step.component';
-import { WizardFooterComponent } from '../wizard-footer/wizard-footer.component';
-import { WizardHeaderComponent } from '../wizard-header/wizard-header.component';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+
+import { WizardFooterComponent } from '../wizard-footer/wizard-footer.component';
+import { WizardHeaderComponent } from '../wizard-header/wizard-header.component';
+import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 
 @Component({
   selector: 'evb-wizard',
@@ -17,7 +18,7 @@ export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
   @ContentChild(WizardFooterComponent) footer: WizardFooterComponent;
   @ContentChild(WizardHeaderComponent) header: WizardHeaderComponent;
 
-  @Output() complete = new EventEmitter<void>();
+  @Output() readonly completed = new EventEmitter<void>();
 
   get currentStep(): WizardStepComponent {
     return this.steps && this.steps.find(step => step.selected);
@@ -61,9 +62,9 @@ export class WizardComponent implements OnInit, OnDestroy, AfterContentInit {
         .pipe(takeUntil(this.unsubscribe))
         .subscribe(() => this.navigatePrevious());
 
-      this.footer.complete
+      this.footer.completed
         .pipe(takeUntil(this.unsubscribe))
-        .subscribe(() => this.complete.emit());
+        .subscribe(() => this.completed.emit());
     }
   }
 

@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 @Component({
   selector: 'evb-wizard-footer',
@@ -13,9 +14,9 @@ export class WizardFooterComponent {
 
   @Input() steps?: WizardStepComponent[];
 
-  @Output() next = new EventEmitter<void>();
-  @Output() previous = new EventEmitter<void>();
-  @Output() complete = new EventEmitter<void>();
+  @Output() readonly next = new EventEmitter<void>();
+  @Output() readonly previous = new EventEmitter<void>();
+  @Output() readonly completed = new EventEmitter<void>();
 
   hasNext() {
     if (!this.steps) { return false; }
@@ -55,7 +56,6 @@ export class WizardFooterComponent {
   }
 
   sendComplete() {
-    debugger;
-    this.complete.emit();
+    this.completed.emit();
   }
 }
