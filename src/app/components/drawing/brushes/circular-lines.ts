@@ -17,7 +17,7 @@ export class CircularLines implements Brush {
     this.context = context;
   }
 
-  up(position: Point) {
+  up() {
     //
   }
 

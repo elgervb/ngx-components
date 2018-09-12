@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
   }
 
   handleClick(arg: string) {
-    console.log('clicked button', event.target);
+    console.log('clicked button', arg);
   }
 
   onFilter(filterStr: string) {

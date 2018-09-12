@@ -25,7 +25,7 @@ export class Marker implements Brush {
     this.brushImg = this.transformImage(this.originalImage);
   }
 
-  up(position: Point) {
+  up() {
     //
   }
 

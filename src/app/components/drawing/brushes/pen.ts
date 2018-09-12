@@ -15,7 +15,7 @@ export class Pen implements Brush {
     this.context = context;
   }
 
-  up(position: Point) {
+  up() {
     this.ctx.closePath();
   }
 

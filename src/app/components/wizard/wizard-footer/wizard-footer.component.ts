@@ -32,7 +32,7 @@ export class WizardFooterComponent {
   hasPrevious() {
     if (!this.steps) { return false; }
 
-    return this.steps.reduce((value, step, index, all) => {
+    return this.steps.reduce((value, step, index) => {
       if (step.selected) {
         return index > 0;
       }

@@ -26,7 +26,7 @@ export class SprayBrush implements Brush {
     this.density = (this.context.data && this.context.data.density) || DEFAULT_DENSITY;
   }
 
-  up(position: Point) {
+  up() {
     clearTimeout(this.timeout);
   }
 

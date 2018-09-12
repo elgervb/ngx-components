@@ -18,11 +18,11 @@ export class MultipleLines implements Brush {
     this.context = context;
   }
 
-  up(position: Point) {
+  up() {
     this.points = [];
   }
 
-  down(from: Point) {
+  down() {
     this.ctx.lineWidth = this.context.lineWidth;
     this.ctx.lineJoin = this.ctx.lineCap = 'round';
     this.ctx.strokeStyle = this.context.color;
