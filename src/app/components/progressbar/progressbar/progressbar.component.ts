@@ -35,8 +35,8 @@ export class ProgressbarComponent implements OnChanges {
    * Angular lifecycle
    */
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['progress']) {
-      this.progress = +changes['progress'].currentValue;
+    if (changes.progress) {
+      this.progress = +changes.progress.currentValue;
     }
   }
 

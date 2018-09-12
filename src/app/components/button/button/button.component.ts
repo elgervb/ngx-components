@@ -13,9 +13,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() disabled = false;
-  @Input() public clazz?: string;
-  @Input() public type = 'button';
-  @Input() public variant?: 'primary' | 'secondary' | 'ghost';
+  @Input() clazz?: string;
+  @Input() type = 'button';
+  @Input() variant?: 'primary' | 'secondary' | 'ghost';
 
   constructor() { }
 

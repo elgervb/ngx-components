@@ -32,13 +32,13 @@ export class FlyoutComponent implements OnInit, OnDestroy, AfterContentInit {
   @ContentChild(FlyoutHeaderComponent) header?: FlyoutHeaderComponent;
 
   get isOpen() {
-    return this._open;
+    return this.privateOpen;
   }
 
   // tslint:disable-next-line no-any the result can return anyting
   private result = new Subject<any>();
 
-  private _open = false;
+  private privateOpen = false;
 
   @HostListener('document:keydown.escape', ['$event'])
   onKeydownHandler() {
@@ -68,7 +68,7 @@ export class FlyoutComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   // tslint:disable-next-line no-any the result can return anyting
   open(): Observable<any> {
-    this._open = true;
+    this.privateOpen = true;
     return this.result.asObservable();
   }
 
@@ -77,7 +77,7 @@ export class FlyoutComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   // tslint:disable-next-line no-any the result can return anyting
   close(result?: any) {
-    this._open = false;
+    this.privateOpen = false;
     this.result.next(result);
     this.result.complete();
   }
@@ -87,7 +87,8 @@ export class FlyoutComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   // tslint:disable-next-line no-any the result can return anyting
   toggle(result?: any) {
-    this._open ? this.close(result) : this.open();
+    this.privateOpen ?
+      this.close(result) : this.open();
   }
 
 }

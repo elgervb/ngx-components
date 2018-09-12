@@ -90,7 +90,10 @@
       true,
       140
     ],
-    "member-access": false,
+    "member-access": [
+      true,
+      "no-public"
+    ],
     "member-ordering": [
       true,
       {
@@ -170,12 +173,12 @@
     "no-return-await": true,
     "no-shadowed-variable": true,
     "no-sparse-arrays": true,
-    "no-string-literal": false,
+    "no-string-literal": true,
     "no-string-throw": true,
     "no-submodule-imports": false,
     "no-switch-case-fall-through": true,
     "no-this-assignment": true,
-    "no-unbound-method": false,
+    "no-unbound-method": true,
     "no-trailing-whitespace": true,
     "no-unnecessary-callback-wrapper": true,
     "no-unnecessary-class": false,
@@ -184,7 +187,7 @@
     "no-unnecessary-type-assertion": true,
     "no-unsafe-any": false,
     "no-unused-variable": false,
-    "no-use-before-declare": false,
+    "no-use-before-declare": true,
     "no-unused-expression": true,
     "no-unsafe-finally": true,
     "no-var-requires": true,
@@ -220,7 +223,7 @@
     "prefer-for-of": true,
     "prefer-function-over-method": false,
     "prefer-method-signature": true,
-    "prefer-object-spread": false,
+    "prefer-object-spread": true,
     "prefer-readonly": false,
     "prefer-switch": true,
     "prefer-template": [
@@ -273,7 +276,7 @@
     "unified-signatures": true,
     "use-default-type-parameter": true,
     "use-isnan": true,
-    "variable-name": false,
+    "variable-name": true,
     "whitespace": [
       true,
       "check-branch",
@@ -297,6 +300,7 @@
       true,
       "Component"
     ],
+    "decorator-not-allowed": true,
     "directive-class-suffix": [
       true,
       "Directive"
@@ -307,11 +311,12 @@
       "check-id",
       "check-text"
     ],
+    "import-destructuring-spacing": true,
     "max-inline-declarations": false,
     "no-attribute-parameter-decorator": true,
     "no-conflicting-life-cycle-hooks": true,
-    "no-input-rename": true,
     "no-forward-ref": true,
+    "no-input-rename": true,
     "no-life-cycle-call": true,
     "no-output-rename": true,
     "no-output-on-prefix": true,
@@ -333,6 +338,7 @@
     "trackBy-function": false,
     "use-input-property-decorator": true,
     "use-life-cycle-interface": true,
+    "use-pipe-decorator": true,
     "use-pipe-transform-interface": true,
     "use-host-property-decorator": true,
     "use-output-property-decorator": true,

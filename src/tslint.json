@@ -13,6 +13,7 @@
       "evb",
       "kebab-case"
     ],
+    "pipe-naming": false,
     "pipe-prefix": [
       true,
       "evb"
