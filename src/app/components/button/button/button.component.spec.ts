@@ -24,13 +24,13 @@ describe('ButtonComponent', () => {
   });
 
   it('should be able to set the type', () => {
-    component.type = 'mock-button';
+    component.type = 'reset';
     fixture.detectChanges();
 
     const el = fixture.debugElement.nativeElement;
 
     const type = el.querySelector('button').getAttribute('type');
-    expect(type).toBe('mock-button');
+    expect(type).toBe('reset');
   });
 
   it('should be possible to set css class', () => {

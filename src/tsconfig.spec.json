@@ -9,7 +9,7 @@
     ]
   },
   "files": [
-    "test.ts",
+    "setupJest.ts",
     "polyfills.ts"
   ],
   "include": [
